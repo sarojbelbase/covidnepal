@@ -1,10 +1,11 @@
 <p align="center">
 <img src="./src/assets/images/black.svg" width="45%" height="auto"><br>
-<span>yet another look at covid-19 cases in nepal</span>
+<strong>yet another look at covid-19 cases in nepal</strong>
 </p>
 
+<hr>
 
-## Project setup
+### Project setup
 
 ```
 yarn install
