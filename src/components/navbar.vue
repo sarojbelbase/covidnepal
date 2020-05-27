@@ -1,13 +1,8 @@
 <template>
   <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-dark darker fixed-top">
-      <router-link :to="{ name: 'index' }" class="navbar-brand">
-        <img
-          src="../assets/images/logo.svg"
-          type="image/svg"
-          alt="covidnepal"
-          class="logo"
-        />
+      <router-link :to="{ name: 'local' }" class="navbar-brand">
+        <img src="../assets/images/logo.svg" type="image/svg" alt="covidnepal" class="logo" />
       </router-link>
       <button
         class="navbar-toggler"
@@ -22,11 +17,15 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <router-link :to="{ name: 'provinces' }" class="nav-link"
-              >Provinces</router-link
-            >
+            <router-link :to="{ name: 'provinces' }" class="nav-link">Province</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link :to="{ name: 'local' }" class="nav-link">Nepal</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link :to="{ name: 'global' }" class="nav-link">Global</router-link>
           </li>
         </ul>
       </div>

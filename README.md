@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./src/assets/images/black.svg" width="45%" height="auto"><br>
+<img src="./src/assets/images/black.svg" width="35%" height="auto"><br>
 <strong>yet another look at covid-19 cases in nepal</strong>
 </p>
 

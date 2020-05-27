@@ -6,43 +6,60 @@
     <div class="provinces-stat" v-else>
       <h2 class="covid-alt py-4">Province Statistics</h2>
       <div class="row">
-        <div
-          class="col-sm-6 col-md-4"
-          v-for="state in state_cases"
-          :key="state.province_id"
-        >
+        <div class="col-sm-6 col-md-4" v-for="state in state_cases" :key="state.province_id">
           <div class="card semi-darker mb-3">
             <div class="card-body text-left">
-              <h4 class="card-title covid-text text-center mb-4">
-                {{ state.province_name }}
-              </h4>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">CONFIRMED CASES</h6>
-                <h6 class="text-success float-right">
-                  {{ state.total_positive | padding }}
-                </h6>
+              <h4 class="card-title covid-text text-center mb-4">{{ state.province_name }}</h4>
+
+              <div class="clearfix mb-2">
+                <h4 class="small font-weight-bold covid-text text-uppercase">
+                  <span class="float-left">CONFIRMED CASES</span>
+                  <span class="float-right">{{ state.total_positive | padding }}</span>
+                </h4>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">RECOVERED CASES</h6>
-                <h6 class="text-warning float-right">
-                  {{ state.total_recovered | padding }}
-                </h6>
+
+              <div class="progress probar mb-3">
+                <div
+                  class="progress-bar bg-warning"
+                  :style=" percentTest(state.total_positive, state.total_positive)"
+                ></div>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">DEATH CASES</h6>
-                <h6 class="text-danger float-right">
-                  {{ state.total_death | padding }}
-                </h6>
+
+              <div class="clearfix mb-2">
+                <h4 class="small font-weight-bold covid-text text-uppercase">
+                  <span class="float-left">RECOVERED CASES</span>
+                  <span class="float-right">{{ state.total_recovered | padding }}</span>
+                </h4>
               </div>
+
+              <div class="progress probar mb-3">
+                <div
+                  class="progress-bar bg-success"
+                  :style=" percentTest(state.total_recovered, state.total_positive)"
+                ></div>
+              </div>
+
+              <div class="clearfix mb-2">
+                <h4 class="small font-weight-bold covid-text text-uppercase">
+                  <span class="float-left">DEATH CASES</span>
+                  <span class="float-right">{{ state.total_death | padding }}</span>
+                </h4>
+              </div>
+
+              <div class="progress probar mb-3">
+                <div
+                  class="progress-bar bg-danger"
+                  :style=" percentTest(state.total_death, state.total_positive)"
+                ></div>
+              </div>
+
               <router-link
                 :to="{
                   name: 'provincedetail',
                   params: { province_id: state.province_id }
                 }"
               >
-                <h6 class="text-info float-right small font-weight-bold mt-3">
-                  SEE MORE
-                </h6>
+                <h6 class="text-info float-right small font-weight-bold mt-3">SEE MORE</h6>
               </router-link>
             </div>
           </div>
@@ -62,6 +79,11 @@ export default {
       loading: true
     };
   },
+  methods: {
+    percentTest: function(sample, total) {
+      return "width: " + Math.round((sample / total) * 100) + "%;";
+    }
+  },
   beforeCreate() {
     this.loading = true;
   },
@@ -80,4 +102,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.probar {
+  height: 6px !important;
+  background-color: rgb(51, 51, 51) !important;
+}
+</style>

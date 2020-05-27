@@ -1,23 +1,29 @@
 import Vue from "vue";
 import Router from "vue-router";
-import index from "@/components/index";
+import local from "@/components/local";
+import global from "@/components/global";
 import provinces from "@/components/provinces";
 import provincedetail from "@/components/provincedetail";
 
 Vue.use(Router);
 
 export default new Router({
-  // mode: 'history',
+  mode: 'history',
   routes: [
     {
       path: "/",
-      name: "index",
-      component: index
+      name: "local",
+      component: local
     },
     {
       path: "/provinces",
       name: "provinces",
       component: provinces
+    },
+    {
+      path: "/global",
+      name: "global",
+      component: global
     },
     {
       path: "/province/:province_id",

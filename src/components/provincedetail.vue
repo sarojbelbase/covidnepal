@@ -4,123 +4,219 @@
       <div class="spinner-border text-warning" role="status"></div>
     </div>
     <div class="main-content" v-else>
-      <h2 class="text-warning">{{ province.province_name }}</h2>
-      <h6
-        class="covid-text text-center small pb-4 font-weight-bold text-uppercase"
-      >
-        Updated {{ updatedon }}
-      </h6>
+      <div class="d-sm-flex justify-content-between align-items-center mb-4">
+        <h3 class="covid-text mb-0 pt-4">{{ province.province_name }}</h3>
+        <span class="covid-text text-uppercase small font-weight-bold">Updated {{ updatedon }}</span>
+      </div>
       <div class="row">
-        <div class="col-sm-12 col-md-12">
-          <div class="card semi-darker mb-3">
-            <div class="card-body text-left">
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">
-                  TOTAL SAMPLE COLLECTED
-                </h6>
-                <h6 class="covid-text float-right">
-                  {{ province.total_samples_collected | padding }}
-                </h6>
+        <div class="col-md-6 col-xl-3 mb-4">
+          <div class="card semi-darker py-2">
+            <div class="card-body">
+              <div class="row align-items-center no-gutters">
+                <div class="col mr-2">
+                  <div class="text-uppercase text-warning font-weight-bold mb-1 h4">
+                    <span>Confirmed</span>
+                  </div>
+                  <div class="covid-text font-weight-bold h3 mb-0">
+                    <span>{{ province.total_positive | padding }}</span>
+                  </div>
+                </div>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">TOTAL TESTED</h6>
-                <h6 class="covid-text float-right">
-                  {{ province.total_tested | padding }}
-                </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3 mb-4">
+          <div class="card semi-darker py-2">
+            <div class="card-body">
+              <div class="row align-items-center no-gutters">
+                <div class="col mr-2">
+                  <div class="text-uppercase text-success font-weight-bold mb-1 h4">
+                    <span>Recovered</span>
+                  </div>
+                  <div class="covid-text font-weight-bold h3 mb-0">
+                    <span>{{ province.total_recovered | padding }}</span>
+                  </div>
+                </div>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">TOTAL NEGATIVE</h6>
-                <h6 class="covid-text float-right">
-                  {{ province.total_negative | padding }}
-                </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3 mb-4">
+          <div class="card semi-darker py-2">
+            <div class="card-body">
+              <div class="row align-items-center no-gutters">
+                <div class="col mr-2">
+                  <div class="text-uppercase text-danger font-weight-bold mb-1 h4">
+                    <span>Deceased</span>
+                  </div>
+                  <div class="covid-text font-weight-bold h3 mb-0">
+                    <span>{{ province.total_death | padding }}</span>
+                  </div>
+                </div>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">TOTAL IN INSOLATION</h6>
-                <h6 class="covid-text float-right">
-                  {{ province.total_in_isolation | padding }}
-                </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3 mb-4">
+          <div class="card semi-darker py-2">
+            <div class="card-body">
+              <div class="row align-items-center no-gutters">
+                <div class="col mr-2">
+                  <div class="text-uppercase text-info font-weight-bold mb-1 h4">
+                    <span>Tested</span>
+                  </div>
+                  <div class="covid-text font-weight-bold h3 mb-0">
+                    <span>{{ province.total_tested | padding }}</span>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-comments fa-2x text-gray-300"></i>
+                </div>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">TOTAL IN QUARANTINE</h6>
-                <h6 class="covid-text float-right">
-                  {{ province.in_quarantine | padding }}
-                </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="d-sm-flex justify-content-between align-items-center mb-4">
+            <h5 class="covid-text mb-0">DETAILS</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="card semi-darker mb-4">
+            <div class="card-body">
+              <div class="clearfix mb-2">
+                <h4 class="small font-weight-bold covid-text text-uppercase">
+                  <span class="float-left">PEOPLE IN QUARANTINE</span>
+                  <span class="float-right">{{ province.in_quarantine | padding }}</span>
+                </h4>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">
-                  NUMBER OF BED AVAILABLE
-                </h6>
-                <h6 class="covid-text float-right">
-                  {{ province.num_of_bed | padding }}
-                </h6>
+
+              <div class="progress localbar mb-4">
+                <div
+                  class="progress-bar bg-danger"
+                  :style=" percentTest(province.in_quarantine, province.total_tested)"
+                ></div>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">NUMBER OF ICU BED</h6>
-                <h6 class="covid-text float-right">
-                  {{ province.num_of_icu_bed | padding }}
-                </h6>
+
+              <div class="clearfix mb-2">
+                <h4 class="small font-weight-bold covid-text text-uppercase">
+                  <span class="float-left">PEOPLE IN ISOLATION</span>
+                  <span class="float-right">{{ province.total_in_isolation | padding }}</span>
+                </h4>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">
-                  TOTAL OCCUPIED ICU BED
-                </h6>
-                <h6 class="covid-text float-right">
-                  {{ province.occupied_icu_bed | padding }}
-                </h6>
+
+              <div class="progress localbar mb-4">
+                <div
+                  class="progress-bar bg-warning"
+                  :style=" percentTest(province.total_in_isolation, province.num_of_isolation_bed)"
+                ></div>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">
-                  TOTAL NUMBER OF VENTILATORS
-                </h6>
-                <h6 class="covid-text float-right">
-                  {{ province.num_of_ventilators | padding }}
-                </h6>
+
+              <div class="clearfix mb-2">
+                <h4 class="small font-weight-bold covid-text text-uppercase">
+                  <span class="float-left">TESTED NEGATIVE</span>
+                  <span class="float-right">{{ province.total_negative | padding }}</span>
+                </h4>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">
-                  TOTAL OCCUPIED VENTILATORS
-                </h6>
-                <h6 class="covid-text float-right">
-                  {{ province.occupied_ventilators | padding }}
-                </h6>
+
+              <div class="progress localbar mb-4">
+                <div
+                  class="progress-bar bg-success"
+                  :style=" percentTest(province.total_negative, province.total_tested)"
+                ></div>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">TOTAL ISOLATION BED</h6>
-                <h6 class="covid-text float-right">
-                  {{ province.num_of_isolation_bed | padding }}
-                </h6>
+
+              <div class="clearfix mb-2">
+                <h4 class="small font-weight-bold covid-text text-uppercase">
+                  <span class="float-left">OCCUPIED ISOLATION BED</span>
+                  <span class="float-right">{{ province.occupied_isolation_bed | padding }}</span>
+                </h4>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">
-                  TOTAL OCCUPIED ISOLATION BED
-                </h6>
-                <h6 class="covid-text float-right">
-                  {{ province.occupied_isolation_bed | padding }}
-                </h6>
+
+              <div class="progress localbar mb-4">
+                <div
+                  class="progress-bar bg-primary"
+                  :style=" percentTest(province.occupied_isolation_bed, province.num_of_isolation_bed)"
+                ></div>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">CONFIRMED CASES</h6>
-                <h6 class="text-success float-right">
-                  {{ province.total_positive | padding }}
-                </h6>
+
+              <div class="clearfix mb-2">
+                <h4 class="small font-weight-bold covid-text text-uppercase">
+                  <span class="float-left">OCCUPIED ICU BED</span>
+                  <span class="float-right">{{ province.occupied_icu_bed | padding }}</span>
+                </h4>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">RECOVERED CASES</h6>
-                <h6 class="covid-recovered float-right">
-                  {{ province.total_recovered | padding }}
-                </h6>
+
+              <div class="progress localbar mb-4">
+                <div
+                  class="progress-bar bg-primary"
+                  :style=" percentTest(province.occupied_icu_bed, province.num_of_icu_bed)"
+                ></div>
               </div>
-              <div class="clearfix">
-                <h6 class="covid-confirmed float-left">DEATH CASES</h6>
-                <h6 class="covid-deceased float-right">
-                  {{ province.total_death | padding }}
-                </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col-lg-6 mb-4">
+              <div class="card covid-text semi-darker">
+                <div class="card-body">
+                  <p class="m-0 font-weight-bold">TOTAL SAMPLE COLLECTED</p>
+                  <p
+                    class="small font-weight-bold m-0"
+                  >{{ province.total_samples_collected | padding }}</p>
+                </div>
               </div>
-              <a class="goback" @click="$router.go(-1)">
-                <h6 class="text-info text-center small font-weight-bold mt-3">
-                  GO BACK
-                </h6>
-              </a>
+            </div>
+            <div class="col-lg-6 mb-4">
+              <div class="card covid-text semi-darker">
+                <div class="card-body">
+                  <p class="m-0 font-weight-bold">TOTAL NUMBER OF BED</p>
+                  <p class="small font-weight-bold m-0">{{ province.num_of_bed | padding }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+              <div class="card covid-text semi-darker">
+                <div class="card-body">
+                  <p class="m-0 font-weight-bold">TOTAL ISOLATION BED</p>
+                  <p
+                    class="small font-weight-bold m-0"
+                  >{{ province.num_of_isolation_bed | padding }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+              <div class="card covid-text semi-darker">
+                <div class="card-body">
+                  <p class="m-0 font-weight-bold">TOTAL VENTILATORS</p>
+                  <p class="small font-weight-bold m-0">{{ province.num_of_ventilators | padding }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+              <div class="card covid-text semi-darker">
+                <div class="card-body">
+                  <p class="m-0 font-weight-bold">TOTAL ICU BED</p>
+                  <p class="small font-weight-bold m-0">{{ province.num_of_icu_bed | padding }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+              <div class="card covid-text semi-darker">
+                <div class="card-body">
+                  <p class="m-0 font-weight-bold">TOTAL OCCUPIED VENTILATORS</p>
+                  <p
+                    class="small font-weight-bold m-0"
+                  >{{ province.occupied_ventilators | padding }}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -141,6 +237,11 @@ export default {
       loading: true,
       updatedon: ""
     };
+  },
+  methods: {
+    percentTest: function(sample, total) {
+      return "width: " + Math.round((sample / total) * 100) + "%;";
+    }
   },
   beforeCreate() {
     this.loading = true;
