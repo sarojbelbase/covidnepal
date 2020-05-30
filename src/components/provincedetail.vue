@@ -222,10 +222,12 @@
         </div>
       </div>
     </div>
+    <!-- <districts /> -->
   </div>
 </template>
 
 <script>
+//import districts from "@/components/districts";
 import axios from "axios";
 import moment from "moment";
 export default {

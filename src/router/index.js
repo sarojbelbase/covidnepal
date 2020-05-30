@@ -4,6 +4,7 @@ import local from "@/components/local";
 import global from "@/components/global";
 import provinces from "@/components/provinces";
 import provincedetail from "@/components/provincedetail";
+import districts from "@/components/districts";
 
 Vue.use(Router);
 
@@ -19,6 +20,12 @@ export default new Router({
       path: "/provinces",
       name: "provinces",
       component: provinces
+    },
+    {
+      path: "/districts",
+      name: "districts",
+      component: districts,
+      props: true
     },
     {
       path: "/global",
