@@ -167,75 +167,73 @@
             <div class="col-lg-6 mb-4">
               <div class="card covid-text semi-darker">
                 <div class="card-body">
-                  <p class="m-0 font-weight-bold">TOTAL SAMPLE COLLECTED</p>
-                  <p
-                    class="small font-weight-bold m-0"
-                  >{{ province.total_samples_collected | padding }}</p>
+                  <p class="font-weight-bold m-0">TOTAL SAMPLE COLLECTED</p>
+                  <p class="font-weight-bold m-0">{{ province.total_samples_collected | padding }}</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-6 mb-4">
               <div class="card covid-text semi-darker">
                 <div class="card-body">
-                  <p class="m-0 font-weight-bold">TOTAL NUMBER OF BED</p>
-                  <p class="small font-weight-bold m-0">{{ province.num_of_bed | padding }}</p>
+                  <p class="font-weight-bold m-0">TOTAL NUMBER OF BED</p>
+                  <p class="font-weight-bold m-0">{{ province.num_of_bed | padding }}</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-6 mb-4">
               <div class="card covid-text semi-darker">
                 <div class="card-body">
-                  <p class="m-0 font-weight-bold">TOTAL ISOLATION BED</p>
-                  <p
-                    class="small font-weight-bold m-0"
-                  >{{ province.num_of_isolation_bed | padding }}</p>
+                  <p class="font-weight-bold m-0">TOTAL ISOLATION BED</p>
+                  <p class="font-weight-bold m-0">{{ province.num_of_isolation_bed | padding }}</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-6 mb-4">
               <div class="card covid-text semi-darker">
                 <div class="card-body">
-                  <p class="m-0 font-weight-bold">TOTAL VENTILATORS</p>
-                  <p class="small font-weight-bold m-0">{{ province.num_of_ventilators | padding }}</p>
+                  <p class="font-weight-bold m-0">TOTAL VENTILATORS</p>
+                  <p class="font-weight-bold m-0">{{ province.num_of_ventilators | padding }}</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-6 mb-4">
               <div class="card covid-text semi-darker">
                 <div class="card-body">
-                  <p class="m-0 font-weight-bold">TOTAL ICU BED</p>
-                  <p class="small font-weight-bold m-0">{{ province.num_of_icu_bed | padding }}</p>
+                  <p class="font-weight-bold m-0">TOTAL ICU BED</p>
+                  <p class="font-weight-bold m-0">{{ province.num_of_icu_bed | padding }}</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-6 mb-4">
               <div class="card covid-text semi-darker">
                 <div class="card-body">
-                  <p class="m-0 font-weight-bold">TOTAL OCCUPIED VENTILATORS</p>
-                  <p
-                    class="small font-weight-bold m-0"
-                  >{{ province.occupied_ventilators | padding }}</p>
+                  <p class="font-weight-bold m-0">TOTAL OCCUPIED VENTILATORS</p>
+                  <p class="font-weight-bold m-0">{{ province.occupied_ventilators | padding }}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <districts :province_name="pro_name" />
       </div>
     </div>
-    <!-- <districts /> -->
   </div>
 </template>
 
 <script>
-//import districts from "@/components/districts";
+import districts from "@/components/districts";
 import axios from "axios";
 import moment from "moment";
 export default {
   name: "provincedetail",
+  components: {
+    districts
+  },
   props: ["province_id"],
   data() {
     return {
       province: [],
+      pro_name: "",
       loading: true,
       updatedon: ""
     };
@@ -257,6 +255,7 @@ export default {
       )
       .then(response => {
         this.province = response.data[0];
+        this.pro_name = response.data[0].province_name;
         this.updatedon = moment(response.data[0].update_date).fromNow();
         this.loading = false;
       })
