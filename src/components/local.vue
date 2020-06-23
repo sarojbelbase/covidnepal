@@ -16,7 +16,7 @@
         </div>
         <div class="row">
           <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card semi-darker py-2">
+            <div class="card py-2 neu">
               <div class="card-body">
                 <div class="row align-items-center no-gutters">
                   <div class="col mr-2">
@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card semi-darker py-2">
+            <div class="card py-2 neu">
               <div class="card-body">
                 <div class="row align-items-center no-gutters">
                   <div class="col mr-2">
@@ -48,7 +48,7 @@
             </div>
           </div>
           <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card semi-darker py-2">
+            <div class="card py-2 neu">
               <div class="card-body">
                 <div class="row align-items-center no-gutters">
                   <div class="col mr-2">
@@ -64,7 +64,7 @@
             </div>
           </div>
           <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card semi-darker py-2">
+            <div class="card py-2 neu">
               <div class="card-body">
                 <div class="row align-items-center no-gutters">
                   <div class="col mr-2">
@@ -85,7 +85,7 @@
             <div class="d-sm-flex justify-content-between align-items-center mb-4">
               <h3 class="covid-text mb-0">Details</h3>
             </div>
-            <div class="card semi-darker mb-4">
+            <div class="card mb-4 neu">
               <div class="card-body">
                 <div class="clearfix mb-2">
                   <h4 class="small font-weight-bold covid-text text-uppercase">
@@ -149,10 +149,10 @@
             <div class="d-sm-flex justify-content-between align-items-center mb-4">
               <h3 class="covid-text mb-0">Today</h3>
             </div>
-            <div class="card semi-darker mb-4">
+            <div class="card mb-4 neu">
               <div class="card-body">
                 <ul class="list-group list-group-flush covid-text">
-                  <li class="list-group-item semi-darker looks border-primary mb-2">
+                  <li class="list-group-item neuify looks border-primary mb-2">
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h6 class="mb-0">
@@ -161,7 +161,7 @@
                       </div>
                     </div>
                   </li>
-                  <li class="list-group-item semi-darker looks border-warning mb-2">
+                  <li class="list-group-item neuify looks border-warning mb-2">
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h6 class="mb-0">
@@ -170,7 +170,7 @@
                       </div>
                     </div>
                   </li>
-                  <li class="list-group-item semi-darker looks border-success mb-2">
+                  <li class="list-group-item neuify looks border-success mb-2">
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h6 class="mb-0">
@@ -179,7 +179,7 @@
                       </div>
                     </div>
                   </li>
-                  <li class="list-group-item bolder semi-darker looks border-danger mb-2">
+                  <li class="list-group-item neuify looks border-danger mb-1">
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h6 class="mb-0">
@@ -254,6 +254,6 @@ export default {
   border-top: 0 !important;
   border-bottom: 0 !important;
   border-right: 0 !important;
-  border-left: 4px solid !important;
+  border-width: 5px !important;
 }
 </style>

@@ -37,6 +37,16 @@ body {
   background-color: #1a1a1b !important;
 }
 
+.neu {
+  border-radius: 12px !important;
+  background: linear-gradient(225deg, #0a0a0a, #0d0d0e);
+  box-shadow: -6px 6px 4px #0a0a0b, 6px -6px 3px #0e0e0f;
+}
+
+.neuify {
+  background: linear-gradient(225deg, #0a0a0a, #0d0d0e);
+}
+
 .dark {
   background-color: #616161;
 }
