@@ -7,7 +7,7 @@
       <h2 class="covid-alt py-4">Province Statistics</h2>
       <div class="row">
         <div class="col-sm-6 col-md-4" v-for="state in state_cases" :key="state.province_id">
-          <div class="card semi-darker mb-3">
+          <div class="card neu my-3 mx-1">
             <div class="card-body text-left">
               <h4 class="card-title covid-text text-center mb-4">{{ state.province_name }}</h4>
 

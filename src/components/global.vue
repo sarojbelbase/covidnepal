@@ -7,11 +7,16 @@
       <div class="container">
         <div class="d-sm-flex justify-content-between align-items-center mb-4">
           <h3 class="covid-text mb-0 pt-4">Overview</h3>
-          <span class="covid-text text-uppercase small font-weight-bold">Updated {{ updatedon }}</span>
+          <span class="covid-text text-uppercase small font-weight-bold">
+            <span class="small mr-1">
+              <i class="fa fa-undo"></i>
+            </span>
+            <span>Updated {{ updatedon }}</span>
+          </span>
         </div>
         <div class="row">
           <div class="col-md-6 col-xl-4 mb-4">
-            <div class="card semi-darker py-5">
+            <div class="card neu py-5">
               <div class="card-body">
                 <div class="row align-items-center no-gutters">
                   <div class="col mr-2">
@@ -27,7 +32,7 @@
             </div>
           </div>
           <div class="col-md-6 col-xl-4 mb-4">
-            <div class="card semi-darker py-5">
+            <div class="card neu py-5">
               <div class="card-body">
                 <div class="row align-items-center no-gutters">
                   <div class="col mr-2">
@@ -43,7 +48,7 @@
             </div>
           </div>
           <div class="col-md-6 col-xl-4 mb-4">
-            <div class="card semi-darker py-5">
+            <div class="card neu py-5">
               <div class="card-body">
                 <div class="row align-items-center no-gutters">
                   <div class="col mr-2">
@@ -91,7 +96,8 @@ export default {
     axios
       .get("https://covidapi.mohp.gov.np/api/v1/global-data/")
       .then(responses => {
-        this.global = responses[0].data[0];
+        console.log(responses.data);
+        this.global = responses.data[0];
         this.updatedon = moment(this.global.updated_at).fromNow();
         this.loading = false;
       })

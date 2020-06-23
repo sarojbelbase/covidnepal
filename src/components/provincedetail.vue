@@ -6,11 +6,16 @@
     <div class="main-content" v-else>
       <div class="d-sm-flex justify-content-between align-items-center mb-4">
         <h3 class="covid-text mb-0 pt-4">{{ province.province_name }}</h3>
-        <span class="covid-text text-uppercase small font-weight-bold">Updated {{ updatedon }}</span>
+        <span class="covid-text text-uppercase small font-weight-bold">
+          <span class="small mr-1">
+            <i class="fa fa-undo"></i>
+          </span>
+          <span>Updated {{ updatedon }}</span>
+        </span>
       </div>
       <div class="row">
         <div class="col-md-6 col-xl-3 mb-4">
-          <div class="card semi-darker py-2">
+          <div class="card neu py-2">
             <div class="card-body">
               <div class="row align-items-center no-gutters">
                 <div class="col mr-2">
@@ -26,7 +31,7 @@
           </div>
         </div>
         <div class="col-md-6 col-xl-3 mb-4">
-          <div class="card semi-darker py-2">
+          <div class="card neu py-2">
             <div class="card-body">
               <div class="row align-items-center no-gutters">
                 <div class="col mr-2">
@@ -42,7 +47,7 @@
           </div>
         </div>
         <div class="col-md-6 col-xl-3 mb-4">
-          <div class="card semi-darker py-2">
+          <div class="card neu py-2">
             <div class="card-body">
               <div class="row align-items-center no-gutters">
                 <div class="col mr-2">
@@ -58,7 +63,7 @@
           </div>
         </div>
         <div class="col-md-6 col-xl-3 mb-4">
-          <div class="card semi-darker py-2">
+          <div class="card neu py-2">
             <div class="card-body">
               <div class="row align-items-center no-gutters">
                 <div class="col mr-2">
@@ -68,9 +73,6 @@
                   <div class="covid-text font-weight-bold h3 mb-0">
                     <span>{{ province.total_tested | padding }}</span>
                   </div>
-                </div>
-                <div class="col-auto">
-                  <i class="fas fa-comments fa-2x text-gray-300"></i>
                 </div>
               </div>
             </div>
@@ -88,7 +90,7 @@
 
       <div class="row">
         <div class="col-lg-6 mb-4">
-          <div class="card semi-darker mb-4">
+          <div class="card neu mb-4">
             <div class="card-body">
               <div class="clearfix mb-2">
                 <h4 class="small font-weight-bold covid-text text-uppercase">
@@ -165,7 +167,7 @@
         <div class="col">
           <div class="row">
             <div class="col-lg-6 mb-4">
-              <div class="card covid-text semi-darker">
+              <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL SAMPLE COLLECTED</p>
                   <p class="font-weight-bold m-0">{{ province.total_samples_collected | padding }}</p>
@@ -173,7 +175,7 @@
               </div>
             </div>
             <div class="col-lg-6 mb-4">
-              <div class="card covid-text semi-darker">
+              <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL NUMBER OF BED</p>
                   <p class="font-weight-bold m-0">{{ province.num_of_bed | padding }}</p>
@@ -181,7 +183,7 @@
               </div>
             </div>
             <div class="col-lg-6 mb-4">
-              <div class="card covid-text semi-darker">
+              <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL ISOLATION BED</p>
                   <p class="font-weight-bold m-0">{{ province.num_of_isolation_bed | padding }}</p>
@@ -189,7 +191,7 @@
               </div>
             </div>
             <div class="col-lg-6 mb-4">
-              <div class="card covid-text semi-darker">
+              <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL VENTILATORS</p>
                   <p class="font-weight-bold m-0">{{ province.num_of_ventilators | padding }}</p>
@@ -197,7 +199,7 @@
               </div>
             </div>
             <div class="col-lg-6 mb-4">
-              <div class="card covid-text semi-darker">
+              <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL ICU BED</p>
                   <p class="font-weight-bold m-0">{{ province.num_of_icu_bed | padding }}</p>
@@ -205,7 +207,7 @@
               </div>
             </div>
             <div class="col-lg-6 mb-4">
-              <div class="card covid-text semi-darker">
+              <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL OCCUPIED VENTILATORS</p>
                   <p class="font-weight-bold m-0">{{ province.occupied_ventilators | padding }}</p>

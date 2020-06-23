@@ -12,7 +12,7 @@
       </div>
       <div class="row">
         <div class="col-sm-6 col-md-4" v-for="(district, index) in districts" :key="index">
-          <div class="card semi-darker mb-3">
+          <div class="card neu my-3 mx-1">
             <div class="card-body text-left">
               <h4 class="card-title covid-text text-center mb-4">{{ index }}</h4>
               <div class="clearfix mb-2">
