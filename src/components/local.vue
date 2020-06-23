@@ -7,7 +7,12 @@
       <div class="container">
         <div class="d-sm-flex justify-content-between align-items-center mb-4">
           <h3 class="covid-text mb-0 pt-4">Overview</h3>
-          <span class="covid-text text-uppercase small font-weight-bold">Updated {{ updatedon[1] }}</span>
+          <span class="covid-text text-uppercase small font-weight-bold">
+            <span class="small mr-1">
+              <i class="fa fa-undo"></i>
+            </span>
+            <span>Updated {{ updatedon }}</span>
+          </span>
         </div>
         <div class="row">
           <div class="col-md-6 col-xl-3 mb-4">
@@ -19,7 +24,7 @@
                       <span>Confirmed</span>
                     </div>
                     <div class="covid-text font-weight-bold h3 mb-0">
-                      <span>{{ local.confirmed | padding }}</span>
+                      <span>{{ local.positive | padding }}</span>
                     </div>
                   </div>
                 </div>
@@ -35,7 +40,7 @@
                       <span>Recovered</span>
                     </div>
                     <div class="covid-text font-weight-bold h3 mb-0">
-                      <span>{{ local.total_recovered | padding }}</span>
+                      <span>{{ local.extra1 | padding }}</span>
                     </div>
                   </div>
                 </div>
@@ -51,7 +56,7 @@
                       <span>Deceased</span>
                     </div>
                     <div class="covid-text font-weight-bold h3 mb-0">
-                      <span>{{ local.death | padding }}</span>
+                      <span>{{ local.deaths | padding }}</span>
                     </div>
                   </div>
                 </div>
@@ -67,11 +72,8 @@
                       <span>Tested</span>
                     </div>
                     <div class="covid-text font-weight-bold h3 mb-0">
-                      <span>{{ local.tested | padding }}</span>
+                      <span>{{ local.samples_tested | padding }}</span>
                     </div>
-                  </div>
-                  <div class="col-auto">
-                    <i class="fas fa-comments fa-2x text-gray-300"></i>
                   </div>
                 </div>
               </div>
@@ -87,89 +89,104 @@
               <div class="card-body">
                 <div class="clearfix mb-2">
                   <h4 class="small font-weight-bold covid-text text-uppercase">
-                    <span class="float-left">TOTAL SAMPLES COLLECTED</span>
-                    <span class="float-right">{{ local.total_samples_collected | padding }}</span>
+                    <span class="float-left">PEOPLE TESTED BY RDT</span>
+                    <span class="float-right">{{ local.extra7 | padding }}</span>
                   </h4>
                 </div>
 
                 <div class="progress localbar mb-4">
                   <div
                     class="progress-bar bg-primary"
-                    :style=" percentTest(local.total_samples_collected, local.tested)"
+                    :style=" percentTest(local.extra7, local.extra7)"
                   ></div>
                 </div>
 
                 <div class="clearfix mb-2">
                   <h4 class="small font-weight-bold covid-text text-uppercase">
-                    <span class="float-left">TOTAL NEGATIVE</span>
-                    <span class="float-right">{{ local.total_negative | padding }}</span>
+                    <span class="float-left">PEOPLE TESTED NEGATIVE</span>
+                    <span class="float-right">{{ local.negative | padding }}</span>
                   </h4>
                 </div>
 
                 <div class="progress localbar mb-4">
                   <div
                     class="progress-bar bg-success"
-                    :style=" percentTest(local.total_negative, local.tested)"
+                    :style=" percentTest(local.negative, local.samples_tested)"
                   ></div>
                 </div>
 
                 <div class="clearfix mb-2">
                   <h4 class="small font-weight-bold covid-text text-uppercase">
                     <span class="float-left">PEOPLE IN ISOLATION</span>
-                    <span class="float-right">{{ local.isolation | padding }}</span>
+                    <span class="float-right">{{ local.extra2 | padding }}</span>
                   </h4>
                 </div>
 
                 <div class="progress localbar mb-4">
                   <div
                     class="progress-bar bg-info"
-                    :style=" percentTest(local.isolation, local.isolation_bed)"
+                    :style=" percentTest(local.extra2, local.positive)"
                   ></div>
                 </div>
 
                 <div class="clearfix mb-2">
                   <h4 class="small font-weight-bold covid-text text-uppercase">
-                    <span class="float-left">TOTAL ISOLATION BED</span>
-                    <span class="float-right">{{ local.isolation_bed | padding }}</span>
+                    <span class="float-left">PEOPLE IN QUARANTINE</span>
+                    <span class="float-right">{{ local.extra8 | padding }}</span>
                   </h4>
                 </div>
 
                 <div class="progress localbar mb-4">
-                  <div class="progress-bar bg-warning" style="width: 100%;"></div>
+                  <div
+                    class="progress-bar bg-warning"
+                    :style=" percentTest(local.extra8, local.samples_tested)"
+                  ></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="d-sm-flex justify-content-between align-items-center mb-4">
-              <h3 class="covid-text mb-0">News & Updates</h3>
+              <h3 class="covid-text mb-0">Today</h3>
             </div>
             <div class="card semi-darker mb-4">
               <div class="card-body">
                 <ul class="list-group list-group-flush covid-text">
-                  <li class="list-group-item semi-darker">
+                  <li class="list-group-item semi-darker looks border-primary mb-2">
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h6 class="mb-0">
-                          <strong>14 new confirmed cases</strong>
+                          <strong>{{local.today_pcr}} samples tested.</strong>
                         </h6>
                       </div>
                     </div>
                   </li>
-                  <li class="list-group-item semi-darker">
+                  <li class="list-group-item semi-darker looks border-warning mb-2">
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h6 class="mb-0">
-                          <strong>2 new recovered cases</strong>
+                          <strong>{{local.today_newcase}} new postive cases.</strong>
                         </h6>
                       </div>
                     </div>
                   </li>
-                  <li class="list-group-item semi-darker">
+                  <li class="list-group-item semi-darker looks border-success mb-2">
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h6 class="mb-0">
-                          <strong>1 new death cases</strong>
+                          <strong>{{local.today_recovered}} people recovered.</strong>
+                        </h6>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item bolder semi-darker looks border-danger mb-2">
+                    <div class="row text-left no-gutters">
+                      <div class="col mr-2">
+                        <h6 class="mb-0">
+                          <strong
+                            v-if="this.local.today_death > 1"
+                          >{{local.today_death}} new death case.</strong>
+                          <strong v-else>{{local.today_death}} new death case.</strong>
                         </h6>
                       </div>
                     </div>
@@ -208,18 +225,15 @@ export default {
   },
 
   created() {
-    const globaldata = axios.get(
-      "https://covidapi.mohp.gov.np/api/v1/global-data/"
+    const localdata = axios.get(
+      "https://covid19.mohp.gov.np/covid/api/confirmedcases"
     );
-    const localdata = axios.get("https://covidapi.mohp.gov.np/api/v1/stats/");
 
-    axios
-      .all([globaldata, localdata])
+    localdata
       .then(responses => {
-        this.global = responses[0].data[0];
-        this.local = responses[1].data;
-        this.updatedon[0] = moment(this.global.updated_at).fromNow();
-        this.updatedon[1] = moment(this.local.update_date).fromNow();
+        console.log(responses.data.nepal);
+        this.local = responses.data.nepal;
+        this.updatedon = moment(this.local.updated_at).fromNow();
         this.loading = false;
       })
       .catch(error => {
@@ -234,5 +248,12 @@ export default {
 .localbar {
   height: 8px !important;
   background-color: rgb(51, 51, 51) !important;
+}
+
+.looks {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  border-right: 0 !important;
+  border-left: 4px solid !important;
 }
 </style>

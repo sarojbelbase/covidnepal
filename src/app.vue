@@ -17,7 +17,7 @@ export default {
 
 <style>
 body {
-  font-family: Helvetica, Arial, sans-serif !important;
+  font-family: "Source Sans Pro", sans-serif !important;
   background-color: #0c0c0d !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;

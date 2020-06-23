@@ -88,12 +88,8 @@ export default {
   },
 
   created() {
-    const globaldata = axios.get(
-      "https://covidapi.mohp.gov.np/api/v1/global-data/"
-    );
-
     axios
-      .all([globaldata])
+      .get("https://covidapi.mohp.gov.np/api/v1/global-data/")
       .then(responses => {
         this.global = responses[0].data[0];
         this.updatedon = moment(this.global.updated_at).fromNow();
