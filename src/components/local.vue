@@ -247,7 +247,7 @@ export default {
 <style>
 .localbar {
   height: 8px !important;
-  background-color: rgb(51, 51, 51) !important;
+  background: linear-gradient(245deg, #1a1919, #0b0b0c);
 }
 
 .looks {
