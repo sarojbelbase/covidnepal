@@ -76,4 +76,17 @@ body {
 .covid-alt {
   color: #fd9001;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0c0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #3d3d3d;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #464646;
+}
 </style>
