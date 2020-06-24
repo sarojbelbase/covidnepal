@@ -23,7 +23,7 @@
                     <div class="text-uppercase text-warning font-weight-bold mb-1 h4">
                       <span>Confirmed</span>
                     </div>
-                    <div class="covid-text font-weight-bold h3 mb-0">
+                    <div class="text-muted font-weight-bold h3 mb-0">
                       <span>{{ local.positive | padding }}</span>
                     </div>
                   </div>
@@ -39,7 +39,7 @@
                     <div class="text-uppercase text-success font-weight-bold mb-1 h4">
                       <span>Recovered</span>
                     </div>
-                    <div class="covid-text font-weight-bold h3 mb-0">
+                    <div class="text-muted font-weight-bold h3 mb-0">
                       <span>{{ local.extra1 | padding }}</span>
                     </div>
                   </div>
@@ -55,7 +55,7 @@
                     <div class="text-uppercase text-danger font-weight-bold mb-1 h4">
                       <span>Deceased</span>
                     </div>
-                    <div class="covid-text font-weight-bold h3 mb-0">
+                    <div class="text-muted font-weight-bold h3 mb-0">
                       <span>{{ local.deaths | padding }}</span>
                     </div>
                   </div>
@@ -71,7 +71,7 @@
                     <div class="text-uppercase text-info font-weight-bold mb-1 h4">
                       <span>Tested</span>
                     </div>
-                    <div class="covid-text font-weight-bold h3 mb-0">
+                    <div class="text-muted font-weight-bold h3 mb-0">
                       <span>{{ local.samples_tested | padding }}</span>
                     </div>
                   </div>
@@ -85,7 +85,7 @@
             <div class="d-sm-flex justify-content-between align-items-center mb-4">
               <h3 class="covid-text mb-0">Details</h3>
             </div>
-            <div class="card mb-4 neu">
+            <div class="card mb-4 neu p-3">
               <div class="card-body">
                 <div class="clearfix mb-2">
                   <h4 class="small font-weight-bold covid-text text-uppercase">
@@ -136,7 +136,7 @@
                   </h4>
                 </div>
 
-                <div class="progress localbar mb-4">
+                <div class="progress localbar mb-2">
                   <div
                     class="progress-bar bg-warning"
                     :style=" percentTest(local.extra8, local.samples_tested)"
@@ -149,45 +149,45 @@
             <div class="d-sm-flex justify-content-between align-items-center mb-4">
               <h3 class="covid-text mb-0">Today</h3>
             </div>
-            <div class="card mb-4 neu">
+            <div class="card mb-4 neu p-2">
               <div class="card-body">
                 <ul class="list-group list-group-flush covid-text">
                   <li class="list-group-item neuify looks border-primary mb-2">
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
-                        <h6 class="mb-0">
+                        <h5 class="mb-0">
                           <strong>{{local.today_pcr}} samples tested.</strong>
-                        </h6>
+                        </h5>
                       </div>
                     </div>
                   </li>
                   <li class="list-group-item neuify looks border-warning mb-2">
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
-                        <h6 class="mb-0">
-                          <strong>{{local.today_newcase}} new postive cases.</strong>
-                        </h6>
+                        <h5 class="mb-0">
+                          <strong>{{local.today_newcase}} new confirmed cases.</strong>
+                        </h5>
                       </div>
                     </div>
                   </li>
                   <li class="list-group-item neuify looks border-success mb-2">
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
-                        <h6 class="mb-0">
+                        <h5 class="mb-0">
                           <strong>{{local.today_recovered}} people recovered.</strong>
-                        </h6>
+                        </h5>
                       </div>
                     </div>
                   </li>
-                  <li class="list-group-item neuify looks border-danger mb-1">
+                  <li class="list-group-item neuify looks border-danger mb-2">
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
-                        <h6 class="mb-0">
+                        <h5 class="mb-0">
                           <strong
                             v-if="this.local.today_death > 1"
                           >{{local.today_death}} new death case.</strong>
                           <strong v-else>{{local.today_death}} new death case.</strong>
-                        </h6>
+                        </h5>
                       </div>
                     </div>
                   </li>
