@@ -17,7 +17,7 @@
         <div class="col-md-6 col-xl-3 mb-4">
           <div class="card neu py-2">
             <div class="card-body">
-              <div class="row align-items-center no-gutters">
+              <div class="row align-items-center g-0">
                 <div class="col mr-2">
                   <div class="text-uppercase text-warning font-weight-bold mb-1 h4">
                     <span>Confirmed</span>
@@ -33,7 +33,7 @@
         <div class="col-md-6 col-xl-3 mb-4">
           <div class="card neu py-2">
             <div class="card-body">
-              <div class="row align-items-center no-gutters">
+              <div class="row align-items-center g-0">
                 <div class="col mr-2">
                   <div class="text-uppercase text-success font-weight-bold mb-1 h4">
                     <span>Recovered</span>
@@ -49,7 +49,7 @@
         <div class="col-md-6 col-xl-3 mb-4">
           <div class="card neu py-2">
             <div class="card-body">
-              <div class="row align-items-center no-gutters">
+              <div class="row align-items-center g-0">
                 <div class="col mr-2">
                   <div class="text-uppercase text-danger font-weight-bold mb-1 h4">
                     <span>Deceased</span>
@@ -65,7 +65,7 @@
         <div class="col-md-6 col-xl-3 mb-4">
           <div class="card neu py-2">
             <div class="card-body">
-              <div class="row align-items-center no-gutters">
+              <div class="row align-items-center g-0">
                 <div class="col mr-2">
                   <div class="text-uppercase text-info font-weight-bold mb-1 h4">
                     <span>Tested</span>
@@ -170,7 +170,9 @@
               <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL SAMPLE COLLECTED</p>
-                  <p class="font-weight-bold mt-1 h5">{{ province.total_samples_collected | padding }}</p>
+                  <p
+                    class="font-weight-bold mt-1 h5"
+                  >{{ province.total_samples_collected | padding }}</p>
                 </div>
               </div>
             </div>
@@ -272,5 +274,6 @@ export default {
 <style>
 .goback {
   cursor: pointer;
+  text-decoration: none;
 }
 </style>

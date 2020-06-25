@@ -1,7 +1,9 @@
 import Vue from "vue";
 import app from "./app.vue";
 import router from "./router";
+import './reg-service-worker'
 import "bootstrap/dist/css/bootstrap.css";
+import store from './store'
 
 Vue.config.productionTip = false;
 
@@ -15,5 +17,6 @@ Vue.filter("padding", givenstat => {
 
 new Vue({
   router,
+  store,
   render: h => h(app)
 }).$mount("#app");

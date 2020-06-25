@@ -1,0 +1,20 @@
+{
+	"name": "covidnepal",
+	"short_name": "covidnepal",
+	"icons": [
+		{
+			"src": "img/icons/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "img/icons/android-chrome-256x256.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		}
+	],
+	"start_url": "/",
+	"theme_color": "#000a22",
+	"background_color": "#000a22",
+	"display": "standalone"
+}

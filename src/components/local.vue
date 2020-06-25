@@ -15,16 +15,16 @@
           </span>
         </div>
         <div class="row">
-          <div class="col-md-6 col-xl-3 mb-4">
+          <div class="col-md-6 col-xl-3">
             <div class="card py-2 neu">
               <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div class="text-uppercase text-warning font-weight-bold mb-1 h4">
-                      <span>Confirmed</span>
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="text-uppercase text-warning mb-1">
+                      <h4 class="font-weight-bold">Confirmed</h4>
                     </div>
-                    <div class="text-muted font-weight-bold h3 mb-0">
-                      <span>{{ local.positive | padding }}</span>
+                    <div class="text-muted">
+                      <h3 class="font-weight-bold">{{ local.positive | padding }}</h3>
                     </div>
                   </div>
                 </div>
@@ -34,29 +34,13 @@
           <div class="col-md-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div class="text-uppercase text-success font-weight-bold mb-1 h4">
-                      <span>Recovered</span>
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="text-uppercase text-success">
+                      <h4 class="font-weight-bold">Recovered</h4>
                     </div>
-                    <div class="text-muted font-weight-bold h3 mb-0">
-                      <span>{{ local.extra1 | padding }}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card py-2 neu">
-              <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div class="text-uppercase text-danger font-weight-bold mb-1 h4">
-                      <span>Deceased</span>
-                    </div>
-                    <div class="text-muted font-weight-bold h3 mb-0">
-                      <span>{{ local.deaths | padding }}</span>
+                   <div class="text-muted">
+                      <h3 class="font-weight-bold">{{ local.extra1 | padding }}</h3>
                     </div>
                   </div>
                 </div>
@@ -66,13 +50,29 @@
           <div class="col-md-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div class="text-uppercase text-info font-weight-bold mb-1 h4">
-                      <span>Tested</span>
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="text-uppercase text-danger">
+                      <h4 class="font-weight-bold">Deceased</h4>
                     </div>
-                    <div class="text-muted font-weight-bold h3 mb-0">
-                      <span>{{ local.samples_tested | padding }}</span>
+                    <div class="text-muted">
+                      <h3 class="font-weight-bold">{{ local.deaths | padding }}</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3 mb-4">
+            <div class="card py-2 neu">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="text-uppercase text-info">
+                      <h4 class="font-weight-bold">Tested</h4>
+                    </div>
+                    <div class="text-muted">
+                      <h3 class="font-weight-bold">{{ local.samples_tested | padding }}</h3>
                     </div>
                   </div>
                 </div>
@@ -83,7 +83,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="d-sm-flex justify-content-between align-items-center mb-4">
-              <h3 class="covid-text mb-0">Details</h3>
+              <h3 class="covid-text">Details</h3>
             </div>
             <div class="card mb-4 neu p-3">
               <div class="card-body">
@@ -153,7 +153,7 @@
               <div class="card-body">
                 <ul class="list-group list-group-flush covid-text">
                   <li class="list-group-item neuify looks border-primary mb-2">
-                    <div class="row text-left no-gutters">
+                    <div class="row text-left">
                       <div class="col mr-2">
                         <h5 class="mb-0">
                           <strong>{{local.today_pcr}} samples tested</strong>
@@ -162,7 +162,7 @@
                     </div>
                   </li>
                   <li class="list-group-item neuify looks border-warning mb-2">
-                    <div class="row text-left no-gutters">
+                    <div class="row text-left">
                       <div class="col mr-2">
                         <h5 class="mb-0">
                           <strong>{{local.today_newcase}} new confirmed cases</strong>
@@ -171,7 +171,7 @@
                     </div>
                   </li>
                   <li class="list-group-item neuify looks border-success mb-2">
-                    <div class="row text-left no-gutters">
+                    <div class="row text-left">
                       <div class="col mr-2">
                         <h5 class="mb-0">
                           <strong>{{local.today_recovered}} people recovered</strong>
@@ -180,7 +180,7 @@
                     </div>
                   </li>
                   <li class="list-group-item neuify looks border-danger mb-2">
-                    <div class="row text-left no-gutters">
+                    <div class="row text-left">
                       <div class="col mr-2">
                         <h5 class="mb-0">
                           <strong

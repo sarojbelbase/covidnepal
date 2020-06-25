@@ -18,7 +18,7 @@
           <div class="col-md-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
-                <div class="row align-items-center no-gutters">
+                <div class="row align-items-center g-0">
                   <div class="col mr-2">
                     <div class="text-uppercase text-warning font-weight-bold mb-1 h4">
                       <span>Confirmed</span>
@@ -34,7 +34,7 @@
           <div class="col-md-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
-                <div class="row align-items-center no-gutters">
+                <div class="row align-items-center g-0">
                   <div class="col mr-2">
                     <div class="text-uppercase text-success font-weight-bold mb-1 h4">
                       <span>Recovered</span>
@@ -50,7 +50,7 @@
           <div class="col-md-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
-                <div class="row align-items-center no-gutters">
+                <div class="row align-items-center g-0">
                   <div class="col mr-2">
                     <div class="text-uppercase text-danger font-weight-bold mb-1 h4">
                       <span>Deceased</span>
@@ -66,7 +66,7 @@
           <div class="col-md-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
-                <div class="row align-items-center no-gutters">
+                <div class="row align-items-center g-0">
                   <div class="col mr-2">
                     <div class="text-uppercase text-info font-weight-bold mb-1 h4">
                       <span>Active</span>
@@ -100,7 +100,7 @@
               <div class="card-body">
                 <ul class="list-group list-group-flush covid-text">
                   <li class="list-group-item neuify looks border-warning mb-2">
-                    <div class="row text-left no-gutters">
+                    <div class="row text-left g-0">
                       <div class="col mr-2">
                         <h5 class="mb-0">
                           <strong>{{global.todayCases | padding }} new postive cases</strong>
@@ -109,7 +109,7 @@
                     </div>
                   </li>
                   <li class="list-group-item neuify looks border-success mb-2">
-                    <div class="row text-left no-gutters">
+                    <div class="row text-left g-0">
                       <div class="col mr-2">
                         <h5 class="mb-0">
                           <strong>{{global.todayRecovered | padding }} new recovered cases</strong>
@@ -118,7 +118,7 @@
                     </div>
                   </li>
                   <li class="list-group-item neuify looks border-danger mb-1">
-                    <div class="row text-left no-gutters">
+                    <div class="row text-left g-0">
                       <div class="col mr-2">
                         <h5 class="mb-0">
                           <strong>{{global.todayDeaths | padding }} new death cases</strong>
