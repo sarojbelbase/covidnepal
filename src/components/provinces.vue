@@ -20,7 +20,7 @@
 
               <div class="progress probar mb-3">
                 <div
-                  class="progress-bar bg-warning"
+                  class="progress-bar bar-warning"
                   :style=" percentTest(state.total_positive, state.total_positive)"
                 ></div>
               </div>
@@ -34,7 +34,7 @@
 
               <div class="progress probar mb-3">
                 <div
-                  class="progress-bar bg-success"
+                  class="progress-bar bar-success"
                   :style=" percentTest(state.total_recovered, state.total_positive)"
                 ></div>
               </div>
@@ -48,7 +48,7 @@
 
               <div class="progress probar mb-3">
                 <div
-                  class="progress-bar bg-danger"
+                  class="progress-bar bar-danger"
                   :style=" percentTest(state.total_death, state.total_positive)"
                 ></div>
               </div>
@@ -105,6 +105,7 @@ export default {
 <style>
 .probar {
   height: 6px !important;
+  background: -o-linear-gradient(205deg, #1a1919, #0b0b0c);
   background: linear-gradient(245deg, #1a1919, #0b0b0c);
 }
 </style>

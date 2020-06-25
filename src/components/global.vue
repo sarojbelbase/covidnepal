@@ -103,7 +103,7 @@
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h5 class="mb-0">
-                          <strong>{{global.todayCases | padding }} new postive cases.</strong>
+                          <strong>{{global.todayCases | padding }} new postive cases</strong>
                         </h5>
                       </div>
                     </div>
@@ -112,7 +112,7 @@
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h5 class="mb-0">
-                          <strong>{{global.todayRecovered | padding }} new recovered cases.</strong>
+                          <strong>{{global.todayRecovered | padding }} new recovered cases</strong>
                         </h5>
                       </div>
                     </div>
@@ -121,7 +121,7 @@
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h5 class="mb-0">
-                          <strong>{{global.todayDeaths | padding }} new death cases.</strong>
+                          <strong>{{global.todayDeaths | padding }} new death cases</strong>
                         </h5>
                       </div>
                     </div>
@@ -152,7 +152,9 @@
                 <div class="card covid-text neu">
                   <div class="card-body">
                     <p class="font-weight-bold mb-1">TOTAL AFFECTED COUNTRIES</p>
-                    <p class="font-weight-bold text-muted h5 m-0">{{ global.affectedCountries | padding }}</p>
+                    <p
+                      class="font-weight-bold text-muted h5 m-0"
+                    >{{ global.affectedCountries | padding }}</p>
                   </div>
                 </div>
               </div>
@@ -211,5 +213,3 @@ export default {
   }
 };
 </script>
-
-<style></style>

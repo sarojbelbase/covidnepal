@@ -24,7 +24,7 @@
 
               <div class="progress probar mb-3">
                 <div
-                  class="progress-bar bg-warning"
+                  class="progress-bar bar-warning"
                   :style=" percentTest(district.confirmed, district.confirmed)"
                 ></div>
               </div>
@@ -38,7 +38,7 @@
 
               <div class="progress probar mb-3">
                 <div
-                  class="progress-bar bg-success"
+                  class="progress-bar bar-success"
                   :style=" percentTest(district.recovered, district.confirmed)"
                 ></div>
               </div>
@@ -52,7 +52,7 @@
 
               <div class="progress probar mb-3">
                 <div
-                  class="progress-bar bg-danger"
+                  class="progress-bar bar-danger"
                   :style=" percentTest(district.deceased, district.confirmed)"
                 ></div>
               </div>

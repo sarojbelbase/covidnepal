@@ -22,7 +22,7 @@
                   <div class="text-uppercase text-warning font-weight-bold mb-1 h4">
                     <span>Confirmed</span>
                   </div>
-                  <div class="covid-text font-weight-bold h3 mb-0">
+                  <div class="text-secondary font-weight-bold h3 mb-0">
                     <span>{{ province.total_positive | padding }}</span>
                   </div>
                 </div>
@@ -38,7 +38,7 @@
                   <div class="text-uppercase text-success font-weight-bold mb-1 h4">
                     <span>Recovered</span>
                   </div>
-                  <div class="covid-text font-weight-bold h3 mb-0">
+                  <div class="text-secondary font-weight-bold h3 mb-0">
                     <span>{{ province.total_recovered | padding }}</span>
                   </div>
                 </div>
@@ -54,7 +54,7 @@
                   <div class="text-uppercase text-danger font-weight-bold mb-1 h4">
                     <span>Deceased</span>
                   </div>
-                  <div class="covid-text font-weight-bold h3 mb-0">
+                  <div class="text-secondary font-weight-bold h3 mb-0">
                     <span>{{ province.total_death | padding }}</span>
                   </div>
                 </div>
@@ -70,7 +70,7 @@
                   <div class="text-uppercase text-info font-weight-bold mb-1 h4">
                     <span>Tested</span>
                   </div>
-                  <div class="covid-text font-weight-bold h3 mb-0">
+                  <div class="text-secondary font-weight-bold h3 mb-0">
                     <span>{{ province.total_tested | padding }}</span>
                   </div>
                 </div>
@@ -83,14 +83,14 @@
       <div class="row">
         <div class="col-md-6">
           <div class="d-sm-flex justify-content-between align-items-center mb-4">
-            <h5 class="covid-text mb-0">DETAILS</h5>
+            <h4 class="covid-text mb-0">Details</h4>
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-lg-6 mb-4">
-          <div class="card neu mb-4">
+          <div class="card neu mb-4 p-3">
             <div class="card-body">
               <div class="clearfix mb-2">
                 <h4 class="small font-weight-bold covid-text text-uppercase">
@@ -101,7 +101,7 @@
 
               <div class="progress localbar mb-4">
                 <div
-                  class="progress-bar bg-danger"
+                  class="progress-bar bar-danger"
                   :style=" percentTest(province.in_quarantine, province.total_tested)"
                 ></div>
               </div>
@@ -115,7 +115,7 @@
 
               <div class="progress localbar mb-4">
                 <div
-                  class="progress-bar bg-warning"
+                  class="progress-bar bar-warning"
                   :style=" percentTest(province.total_in_isolation, province.num_of_isolation_bed)"
                 ></div>
               </div>
@@ -129,7 +129,7 @@
 
               <div class="progress localbar mb-4">
                 <div
-                  class="progress-bar bg-success"
+                  class="progress-bar bar-success"
                   :style=" percentTest(province.total_negative, province.total_tested)"
                 ></div>
               </div>
@@ -143,7 +143,7 @@
 
               <div class="progress localbar mb-4">
                 <div
-                  class="progress-bar bg-primary"
+                  class="progress-bar bar-primary"
                   :style=" percentTest(province.occupied_isolation_bed, province.num_of_isolation_bed)"
                 ></div>
               </div>
@@ -157,7 +157,7 @@
 
               <div class="progress localbar mb-4">
                 <div
-                  class="progress-bar bg-primary"
+                  class="progress-bar bar-info"
                   :style=" percentTest(province.occupied_icu_bed, province.num_of_icu_bed)"
                 ></div>
               </div>
@@ -170,7 +170,7 @@
               <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL SAMPLE COLLECTED</p>
-                  <p class="font-weight-bold m-0">{{ province.total_samples_collected | padding }}</p>
+                  <p class="font-weight-bold mt-1 h5">{{ province.total_samples_collected | padding }}</p>
                 </div>
               </div>
             </div>
@@ -178,7 +178,7 @@
               <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL NUMBER OF BED</p>
-                  <p class="font-weight-bold m-0">{{ province.num_of_bed | padding }}</p>
+                  <p class="font-weight-bold mt-1 h5">{{ province.num_of_bed | padding }}</p>
                 </div>
               </div>
             </div>
@@ -186,7 +186,7 @@
               <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL ISOLATION BED</p>
-                  <p class="font-weight-bold m-0">{{ province.num_of_isolation_bed | padding }}</p>
+                  <p class="font-weight-bold mt-1 h5">{{ province.num_of_isolation_bed | padding }}</p>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@
               <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL VENTILATORS</p>
-                  <p class="font-weight-bold m-0">{{ province.num_of_ventilators | padding }}</p>
+                  <p class="font-weight-bold mt-1 h5">{{ province.num_of_ventilators | padding }}</p>
                 </div>
               </div>
             </div>
@@ -202,7 +202,7 @@
               <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL ICU BED</p>
-                  <p class="font-weight-bold m-0">{{ province.num_of_icu_bed | padding }}</p>
+                  <p class="font-weight-bold mt-1 h5">{{ province.num_of_icu_bed | padding }}</p>
                 </div>
               </div>
             </div>
@@ -210,7 +210,7 @@
               <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold m-0">TOTAL OCCUPIED VENTILATORS</p>
-                  <p class="font-weight-bold m-0">{{ province.occupied_ventilators | padding }}</p>
+                  <p class="font-weight-bold mt-1 h5">{{ province.occupied_ventilators | padding }}</p>
                 </div>
               </div>
             </div>

@@ -39,11 +39,14 @@ body {
 
 .neu {
   border-radius: 12px !important;
+  background: -o-linear-gradient(225deg, #0a0a0a, #0d0d0e);
   background: linear-gradient(225deg, #0a0a0a, #0d0d0e);
+  -webkit-box-shadow: -6px 6px 4px #0a0a0b, 6px -6px 3px #0e0e0f;
   box-shadow: -6px 6px 4px #0a0a0b, 6px -6px 3px #0e0e0f;
 }
 
 .neuify {
+  background: -o-linear-gradient(225deg, #0a0a0a, #0d0d0e);
   background: linear-gradient(225deg, #0a0a0a, #0d0d0e);
 }
 
@@ -88,5 +91,30 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #464646;
+}
+
+.bar-warning {
+  background: -o-linear-gradient(225deg, #e9b61c, #8b751d);
+  background: linear-gradient(225deg, #d4ac32, #8b751d);
+}
+
+.bar-info {
+  background: -o-linear-gradient(225deg, #116e7c, #148c9e);
+  background: linear-gradient(225deg, #116e7c, #148c9e);
+}
+
+.bar-success {
+  background: -o-linear-gradient(225deg, #1fbb44, #357c45);
+  background: linear-gradient(225deg, #1fbb44, #357c45);
+}
+
+.bar-danger {
+  background: -o-linear-gradient(225deg, #e0505e, #c6303e);
+  background: linear-gradient(225deg, #e0505e, #c6303e);
+}
+
+.bar-primary {
+  background: -o-linear-gradient(225deg, #0464be, #29496b);
+  background: linear-gradient(225deg, #0464be, #29496b);
 }
 </style>

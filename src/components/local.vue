@@ -96,7 +96,7 @@
 
                 <div class="progress localbar mb-4">
                   <div
-                    class="progress-bar bg-primary"
+                    class="progress-bar bar-primary"
                     :style=" percentTest(local.extra7, local.extra7)"
                   ></div>
                 </div>
@@ -110,7 +110,7 @@
 
                 <div class="progress localbar mb-4">
                   <div
-                    class="progress-bar bg-success"
+                    class="progress-bar bar-success"
                     :style=" percentTest(local.negative, local.samples_tested)"
                   ></div>
                 </div>
@@ -124,7 +124,7 @@
 
                 <div class="progress localbar mb-4">
                   <div
-                    class="progress-bar bg-info"
+                    class="progress-bar bar-info"
                     :style=" percentTest(local.extra2, local.positive)"
                   ></div>
                 </div>
@@ -138,7 +138,7 @@
 
                 <div class="progress localbar mb-2">
                   <div
-                    class="progress-bar bg-warning"
+                    class="progress-bar bar-warning"
                     :style=" percentTest(local.extra8, local.samples_tested)"
                   ></div>
                 </div>
@@ -156,7 +156,7 @@
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h5 class="mb-0">
-                          <strong>{{local.today_pcr}} samples tested.</strong>
+                          <strong>{{local.today_pcr}} samples tested</strong>
                         </h5>
                       </div>
                     </div>
@@ -165,7 +165,7 @@
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h5 class="mb-0">
-                          <strong>{{local.today_newcase}} new confirmed cases.</strong>
+                          <strong>{{local.today_newcase}} new confirmed cases</strong>
                         </h5>
                       </div>
                     </div>
@@ -174,7 +174,7 @@
                     <div class="row text-left no-gutters">
                       <div class="col mr-2">
                         <h5 class="mb-0">
-                          <strong>{{local.today_recovered}} people recovered.</strong>
+                          <strong>{{local.today_recovered}} people recovered</strong>
                         </h5>
                       </div>
                     </div>
@@ -184,9 +184,10 @@
                       <div class="col mr-2">
                         <h5 class="mb-0">
                           <strong
-                            v-if="this.local.today_death > 1"
-                          >{{local.today_death}} new death case.</strong>
-                          <strong v-else>{{local.today_death}} new death case.</strong>
+                            v-if="this.local.today_death == 1"
+                          >{{local.today_death}} new death case</strong>
+                          <strong v-else-if="this.local.today_death == 0">No new death cases</strong>
+                          <strong v-else>{{local.today_death}} new death cases</strong>
                         </h5>
                       </div>
                     </div>
@@ -247,6 +248,7 @@ export default {
 <style>
 .localbar {
   height: 8px !important;
+  background: -o-linear-gradient(205deg, #1a1919, #0b0b0c);
   background: linear-gradient(245deg, #1a1919, #0b0b0c);
 }
 
