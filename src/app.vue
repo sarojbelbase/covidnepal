@@ -117,4 +117,38 @@ body {
   background: -o-linear-gradient(225deg, #0464be, #29496b);
   background: linear-gradient(225deg, #0464be, #29496b);
 }
+ion-icon {
+  color: #c0c0c0;
+}
+ion-icon.large {
+  font-size: 24px !important;
+}
+ion-icon.small {
+  font-size: 12px !important;
+}
+ion-icon.success {
+  color: #19d42f;
+}
+ion-icon.danger {
+  color: #e91b37;
+}
+ion-icon.warning {
+  color: #ffbf00;
+}
+ion-icon.info {
+  color: #11aac2;
+}
+ion-icon.primary {
+  color: #0c66b9;
+}
+
+ion-icon.thin {
+  --ionicon-stroke-width: 16px;
+}
+ion-icon.bold {
+  --ionicon-stroke-width: 36px;
+}
+ion-icon.bolder {
+  --ionicon-stroke-width: 68px;
+}
 </style>

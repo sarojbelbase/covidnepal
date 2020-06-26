@@ -9,15 +9,15 @@
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-target="#navdown-bar"
+          aria-controls="navdown-bar"
           aria-expanded="false"
-          aria-label="Toggle navigation"
+          aria-label="See Navigation Contents"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navdown-bar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <router-link :to="{ name: 'provinces' }" class="nav-link">Province</router-link>

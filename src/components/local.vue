@@ -8,14 +8,14 @@
         <div class="d-sm-flex justify-content-between align-items-center mb-4">
           <h3 class="covid-text mb-0 pt-4">Overview</h3>
           <span class="covid-text text-uppercase small font-weight-bold">
-            <span class="small mr-1">
-              <i class="fa fa-undo"></i>
+            <span class="m-1">
+              <ion-icon name="refresh" class="small bolder"></ion-icon>
             </span>
             <span>Updated {{ updatedon }}</span>
           </span>
         </div>
         <div class="row">
-          <div class="col-md-6 col-xl-3">
+          <div class="col-md-6 col-sm-6 col-xl-3">
             <div class="card py-2 neu">
               <div class="card-body">
                 <div class="row align-items-center">
@@ -31,7 +31,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-xl-3 mb-4">
+          <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
                 <div class="row align-items-center">
@@ -39,7 +39,7 @@
                     <div class="text-uppercase text-success">
                       <h4 class="font-weight-bold">Recovered</h4>
                     </div>
-                   <div class="text-muted">
+                    <div class="text-muted">
                       <h3 class="font-weight-bold">{{ local.extra1 | padding }}</h3>
                     </div>
                   </div>
@@ -47,7 +47,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-xl-3 mb-4">
+          <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
                 <div class="row align-items-center">
@@ -63,7 +63,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-xl-3 mb-4">
+          <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
                 <div class="row align-items-center">
@@ -82,7 +82,7 @@
         </div>
         <div class="row">
           <div class="col-md-6">
-            <div class="d-sm-flex justify-content-between align-items-center mb-4">
+            <div class="d-sm-flex justify-content-between align-items-center mb-3">
               <h3 class="covid-text">Details</h3>
             </div>
             <div class="card mb-4 neu p-3">
@@ -136,7 +136,7 @@
                   </h4>
                 </div>
 
-                <div class="progress localbar mb-2">
+                <div class="progress localbar mb-3">
                   <div
                     class="progress-bar bar-warning"
                     :style=" percentTest(local.extra8, local.samples_tested)"
@@ -145,17 +145,19 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 col-md-6">
             <div class="d-sm-flex justify-content-between align-items-center mb-4">
-              <h3 class="covid-text mb-0">Today</h3>
+              <h3 class="covid-text mb-0">
+                <span class="mr-1">Today</span>
+              </h3>
             </div>
-            <div class="card mb-4 neu p-2">
+            <div class="card mb-4 neu p-3">
               <div class="card-body">
                 <ul class="list-group list-group-flush covid-text">
                   <li class="list-group-item neuify looks border-primary mb-2">
                     <div class="row text-left">
                       <div class="col mr-2">
-                        <h5 class="mb-0">
+                        <h5 class="m-1">
                           <strong>{{local.today_pcr}} samples tested</strong>
                         </h5>
                       </div>
@@ -164,7 +166,7 @@
                   <li class="list-group-item neuify looks border-warning mb-2">
                     <div class="row text-left">
                       <div class="col mr-2">
-                        <h5 class="mb-0">
+                        <h5 class="m-1">
                           <strong>{{local.today_newcase}} new confirmed cases</strong>
                         </h5>
                       </div>
@@ -173,7 +175,7 @@
                   <li class="list-group-item neuify looks border-success mb-2">
                     <div class="row text-left">
                       <div class="col mr-2">
-                        <h5 class="mb-0">
+                        <h5 class="m-1">
                           <strong>{{local.today_recovered}} people recovered</strong>
                         </h5>
                       </div>
@@ -182,7 +184,7 @@
                   <li class="list-group-item neuify looks border-danger mb-2">
                     <div class="row text-left">
                       <div class="col mr-2">
-                        <h5 class="mb-0">
+                        <h5 class="m-1">
                           <strong
                             v-if="this.local.today_death == 1"
                           >{{local.today_death}} new death case</strong>
@@ -232,7 +234,6 @@ export default {
 
     localdata
       .then(responses => {
-        console.log(responses.data.nepal);
         this.local = responses.data.nepal;
         this.updatedon = moment(this.local.updated_at).fromNow();
         this.loading = false;

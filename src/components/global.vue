@@ -8,119 +8,111 @@
         <div class="d-sm-flex justify-content-between align-items-center mb-4">
           <h3 class="covid-text mb-0 pt-4">Overview</h3>
           <span class="covid-text text-uppercase small font-weight-bold">
-            <span class="small mr-1">
-              <i class="fa fa-undo"></i>
+            <span class="m-1">
+              <ion-icon name="refresh" class="small bolder"></ion-icon>
             </span>
             <span>Updated {{ updatedon }}</span>
           </span>
         </div>
         <div class="row">
-          <div class="col-md-6 col-xl-3 mb-4">
+          <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
-                <div class="row align-items-center g-0">
-                  <div class="col mr-2">
-                    <div class="text-uppercase text-warning font-weight-bold mb-1 h4">
-                      <span>Confirmed</span>
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="text-uppercase text-warning mb-1">
+                      <h4 class="font-weight-bold">Confirmed</h4>
                     </div>
-                    <div class="text-muted font-weight-bold h3 mb-0">
-                      <span>{{ global.cases | padding }}</span>
+                    <div class="text-muted">
+                      <h3 class="font-weight-bold">{{ global.cases | padding }}</h3>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-xl-3 mb-4">
+          <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
-                <div class="row align-items-center g-0">
-                  <div class="col mr-2">
-                    <div class="text-uppercase text-success font-weight-bold mb-1 h4">
-                      <span>Recovered</span>
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="text-uppercase text-success">
+                      <h4 class="font-weight-bold">Recovered</h4>
                     </div>
-                    <div class="text-muted font-weight-bold h3 mb-0">
-                      <span>{{ global.recovered | padding }}</span>
+                    <div class="text-muted">
+                      <h3 class="font-weight-bold">{{ global.recovered | padding }}</h3>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-xl-3 mb-4">
+          <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
-                <div class="row align-items-center g-0">
-                  <div class="col mr-2">
-                    <div class="text-uppercase text-danger font-weight-bold mb-1 h4">
-                      <span>Deceased</span>
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="text-uppercase text-danger">
+                      <h4 class="font-weight-bold">Deceased</h4>
                     </div>
-                    <div class="text-muted font-weight-bold h3 mb-0">
-                      <span>{{ global.deaths | padding }}</span>
+                    <div class="text-muted">
+                      <h3 class="font-weight-bold">{{ global.deaths | padding }}</h3>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-xl-3 mb-4">
+          <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
             <div class="card py-2 neu">
               <div class="card-body">
-                <div class="row align-items-center g-0">
-                  <div class="col mr-2">
-                    <div class="text-uppercase text-info font-weight-bold mb-1 h4">
-                      <span>Active</span>
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="text-uppercase text-info">
+                      <h4 class="font-weight-bold">Active</h4>
                     </div>
-                    <div class="text-muted font-weight-bold h3 mb-0">
-                      <span>{{ global.active | padding }}</span>
+                    <div class="text-muted">
+                      <h3 class="font-weight-bold">{{ global.active | padding }}</h3>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="d-sm-flex justify-content-between align-items-center mb-4">
-              <h3 class="covid-text mb-0">Today</h3>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="d-sm-flex justify-content-between align-items-center mb-4">
-              <h3 class="covid-text mb-0">Details</h3>
             </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-lg-6">
-            <div class="card mb-4 p-1 neu">
+            <div class="col-12">
+              <div class="d-sm-flex justify-content-between align-items-center mb-3">
+                <h3 class="covid-text">Today</h3>
+              </div>
+            </div>
+            <div class="card mb-4 p-3 neu">
               <div class="card-body">
                 <ul class="list-group list-group-flush covid-text">
                   <li class="list-group-item neuify looks border-warning mb-2">
-                    <div class="row text-left g-0">
+                    <div class="row text-left">
                       <div class="col mr-2">
-                        <h5 class="mb-0">
+                        <h5 class="m-1">
                           <strong>{{global.todayCases | padding }} new postive cases</strong>
                         </h5>
                       </div>
                     </div>
                   </li>
                   <li class="list-group-item neuify looks border-success mb-2">
-                    <div class="row text-left g-0">
+                    <div class="row text-left">
                       <div class="col mr-2">
-                        <h5 class="mb-0">
+                        <h5 class="m-1">
                           <strong>{{global.todayRecovered | padding }} new recovered cases</strong>
                         </h5>
                       </div>
                     </div>
                   </li>
                   <li class="list-group-item neuify looks border-danger mb-1">
-                    <div class="row text-left g-0">
+                    <div class="row text-left">
                       <div class="col mr-2">
-                        <h5 class="mb-0">
+                        <h5 class="m-1">
                           <strong>{{global.todayDeaths | padding }} new death cases</strong>
                         </h5>
                       </div>
@@ -130,39 +122,45 @@
               </div>
             </div>
           </div>
-          <div class="col">
+
+          <div class="col-lg-6">
+            <div class="col-12">
+              <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                <h3 class="covid-text mb-0">Details</h3>
+              </div>
+            </div>
             <div class="row">
-              <div class="col-lg-6 mb-4">
+              <div class="col-lg-6 col-sm-6 mb-4">
                 <div class="card covid-text neu">
                   <div class="card-body">
-                    <p class="font-weight-bold mb-1">TOTAL POPULATION</p>
-                    <p class="font-weight-bold text-muted h5 m-0">{{ global.population | padding }}</p>
+                    <p class="font-weight-bold h5 m-2">TOTAL POPULATION</p>
+                    <p class="font-weight-bold text-muted h5 m-1">{{ global.population | padding }}</p>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 mb-4">
+              <div class="col-lg-6 col-sm-6 mb-4">
                 <div class="card covid-text neu">
                   <div class="card-body">
-                    <p class="font-weight-bold mb-1">TOTAL TESTS</p>
-                    <p class="font-weight-bold text-muted h5 m-0">{{ global.tests | padding }}</p>
+                    <p class="font-weight-bold h5 m-2">TOTAL TESTS</p>
+                    <p class="font-weight-bold text-muted h5 m-1">{{ global.tests | padding }}</p>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 mb-4">
+              <div class="col-lg-6 col-sm-6 mb-4">
                 <div class="card covid-text neu">
                   <div class="card-body">
-                    <p class="font-weight-bold mb-1">TOTAL AFFECTED COUNTRIES</p>
+                    <p class="font-weight-bold h6 m-2">TOTAL AFFECTED COUNTRIES</p>
                     <p
-                      class="font-weight-bold text-muted h5 m-0"
+                      class="font-weight-bold text-muted h5 m-2"
                     >{{ global.affectedCountries | padding }}</p>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 mb-4">
+              <div class="col-lg-6 col-sm-6 mb-4">
                 <div class="card covid-text neu">
                   <div class="card-body">
-                    <p class="font-weight-bold mb-1">TOTAL CRITICAL</p>
-                    <p class="font-weight-bold text-muted h5 m-0">{{ global.critical | padding }}</p>
+                    <p class="font-weight-bold h5 m-2">TOTAL CRITICAL</p>
+                    <p class="font-weight-bold text-muted h5 m-1">{{ global.critical | padding }}</p>
                   </div>
                 </div>
               </div>
@@ -201,7 +199,6 @@ export default {
     axios
       .get("https://data.nepalcorona.info/api/v1/world")
       .then(responses => {
-        console.log(responses.data);
         this.global = responses.data;
         this.updatedon = moment(this.global.updated).fromNow();
         this.loading = false;
