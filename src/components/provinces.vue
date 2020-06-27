@@ -6,57 +6,57 @@
     <div class="provinces-stat" v-else>
       <h2 class="covid-alt py-4">Province Statistics</h2>
       <div class="row">
-        <div class="col-sm-6 col-md-4" v-for="state in state_cases" :key="state.province_id">
+        <div class="col-sm-6 col-md-4" v-for="(state,index) in state_cases" :key="index">
           <div class="card neu my-3 mx-1">
             <div class="card-body text-left">
-              <h4 class="card-title covid-text text-center mb-4">{{ state.province_name }}</h4>
+              <h4 class="card-title covid-text text-center mb-4">Province {{index}}</h4>
 
               <div class="clearfix mb-2">
                 <h4 class="small font-weight-bold covid-text text-uppercase">
                   <span class="float-left">CONFIRMED CASES</span>
-                  <span class="float-right">{{ state.total_positive | padding }}</span>
+                  <span class="float-right">{{ state.cases | padding }}</span>
                 </h4>
               </div>
 
               <div class="progress probar mb-3">
                 <div
                   class="progress-bar bar-warning"
-                  :style=" percentTest(state.total_positive, state.total_positive)"
+                  :style=" percentTest(state.cases, state.cases)"
                 ></div>
               </div>
 
               <div class="clearfix mb-2">
                 <h4 class="small font-weight-bold covid-text text-uppercase">
                   <span class="float-left">RECOVERED CASES</span>
-                  <span class="float-right">{{ state.total_recovered | padding }}</span>
+                  <span class="float-right">{{ state.recovered | padding }}</span>
                 </h4>
               </div>
 
               <div class="progress probar mb-3">
                 <div
                   class="progress-bar bar-success"
-                  :style=" percentTest(state.total_recovered, state.total_positive)"
+                  :style=" percentTest(state.recovered, state.cases)"
                 ></div>
               </div>
 
               <div class="clearfix mb-2">
                 <h4 class="small font-weight-bold covid-text text-uppercase">
                   <span class="float-left">DEATH CASES</span>
-                  <span class="float-right">{{ state.total_death | padding }}</span>
+                  <span class="float-right">{{ state.deaths | padding }}</span>
                 </h4>
               </div>
 
               <div class="progress probar mb-3">
                 <div
                   class="progress-bar bar-danger"
-                  :style=" percentTest(state.total_death, state.total_positive)"
+                  :style=" percentTest(state.deaths, state.cases)"
                 ></div>
               </div>
 
               <router-link
                 :to="{
                   name: 'provincedetail',
-                  params: { province_id: state.province_id }
+                  params: { province_id: index }
                 }"
               >
                 <h6 class="text-info float-right small font-weight-bold mt-3">SEE MORE</h6>
@@ -89,7 +89,7 @@ export default {
   },
   created() {
     axios
-      .get("https://covidapi.mohp.gov.np/api/v1/stats/?province=all")
+      .get("https://whatsthemiti.herokuapp.com/api/provinces")
       .then(response => {
         this.state_cases = response.data;
         this.loading = false;

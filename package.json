@@ -2,7 +2,7 @@
 	"name": "covidnepal",
 	"description": "yet another look at covid-19 cases in nepal",
 	"author": "sidbelbase",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"private": true,
 	"scripts": {
 		"start": "vue-cli-service serve",
@@ -27,9 +27,5 @@
 		"@vue/cli-service": "~4.4.0",
 		"vue-template-compiler": "^2.6.11"
 	},
-	"browserslist": [
-		"> 1%",
-		"last 2 versions",
-		"not dead"
-	]
+	"browserslist": [ "> 1%", "last 2 versions", "not dead" ]
 }
