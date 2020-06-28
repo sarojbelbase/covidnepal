@@ -4,6 +4,20 @@
       <div class="spinner-border text-warning" role="status"></div>
     </div>
     <div class="row" v-else>
+      <div class="d-sm-flex justify-content-between align-items-center my-2">
+        <h3 class="covid-text pt-4 align-middle">
+          <span>News & Updates</span>
+          <span class="m-2">
+            <ion-icon name="radio"></ion-icon>
+          </span>
+        </h3>
+        <span class="covid-text text-uppercase small font-weight-bold">
+          <span class="m-1">
+            <ion-icon name="refresh" class="small bolder"></ion-icon>
+          </span>
+          <span>Updated {{ news[0].updated_at | humanize }}</span>
+        </span>
+      </div>
       <div
         class="col-md-4 col-sm-6 col-xl-3 p-3 my-2"
         v-for="(thenews, index) in news"
