@@ -11,7 +11,7 @@
             <span class="m-1">
               <ion-icon name="refresh" class="small bolder"></ion-icon>
             </span>
-            <span>Updated {{ updatedon }}</span>
+            <span>Updated {{ local.updated_at | humanize }}</span>
           </span>
         </div>
         <div class="row">
@@ -214,7 +214,6 @@ export default {
     return {
       global: [],
       local: [],
-      updatedon: [],
       loading: true
     };
   },
@@ -235,7 +234,6 @@ export default {
     localdata
       .then(responses => {
         this.local = responses.data.nepal;
-        this.updatedon = moment(this.local.updated_at).fromNow();
         this.loading = false;
       })
       .catch(error => {

@@ -1,18 +1,24 @@
 <template>
   <div class="news container-fluid">
-    <div class="row">
+    <div class="loader" v-if="loading">
+      <div class="spinner-border text-warning" role="status"></div>
+    </div>
+    <div class="row" v-else>
       <div
-        class="col-md-6 col-sm-6 col-xl-3 p-3 mt-3"
+        class="col-md-4 col-sm-6 col-xl-3 p-3 my-2"
         v-for="(thenews, index) in news"
         :key="index"
       >
-        <div class="card neu" style="max-width: 24rem; min-height: 22rem;">
-          <img :src="thenews.image_url" class="card-img-top img-responsive" alt="thenews.title" />
+        <div class="card neu news-card">
+          <img :src="thenews.image_url" class="card-img-top news-image" alt="thenews.title" />
           <div class="card-body">
-            <h5 class="card-title text-muted">{{thenews.title}}</h5>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+            <h6 class="card-title text-muted news-title text-left">{{thenews.title}}</h6>
+            <h6
+              class="text-info float-left small font-weight-bold mt-3 text-uppercase"
+            >{{thenews.created_at | humanize }}</h6>
+            <a :href="thenews.url" target="_blank" rel="noopener noreferrer">
+              <h6 class="text-muted float-right small font-weight-bold mt-3">READ MORE</h6>
+            </a>
           </div>
         </div>
       </div>
@@ -39,12 +45,9 @@ export default {
     axios
       .get("https://nepalcorona.info/api/v1/news")
       .then(response => {
-        this.news = response.data.data;
-        console.log(response.data.data);
-        response.data.forEach(hello => {
-          console.log(hello);
-        });
-        console.log(response.data);
+        this.news = response.data.data.sort((a, b) =>
+          a.created_at < b.created_at ? 1 : -1
+        );
         this.loading = false;
       })
       .catch(error => {
@@ -56,10 +59,28 @@ export default {
 </script>
 
 <style>
-.masonry {
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: 0;
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@600&display=swap");
+
+.news .news-title {
+  font-family: "Mukta", sans-serif;
+}
+
+.news .news-image {
+  height: 11rem;
+}
+
+.news .news-card {
+  max-width: 24rem;
+  min-height: 19rem;
+}
+
+@media (max-width: 768px) {
+  .news .news-image {
+    height: unset;
+  }
+
+  .news .news-card {
+    max-width: unset;
+  }
 }
 </style>

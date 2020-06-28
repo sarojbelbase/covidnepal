@@ -11,7 +11,7 @@
             <span class="m-1">
               <ion-icon name="refresh" class="small bolder"></ion-icon>
             </span>
-            <span>Updated {{ updatedon }}</span>
+            <span>Updated {{ global.updated | humanize }}</span>
           </span>
         </div>
         <div class="row">
@@ -181,8 +181,6 @@ export default {
   data() {
     return {
       global: [],
-      global: [],
-      updatedon: [],
       loading: true
     };
   },
@@ -200,7 +198,6 @@ export default {
       .get("https://data.nepalcorona.info/api/v1/world")
       .then(responses => {
         this.global = responses.data;
-        this.updatedon = moment(this.global.updated).fromNow();
         this.loading = false;
       })
       .catch(error => {

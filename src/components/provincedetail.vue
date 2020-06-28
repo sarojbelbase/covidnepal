@@ -10,7 +10,7 @@
           <span class="m-1">
             <ion-icon name="refresh" class="small bolder"></ion-icon>
           </span>
-          <span>Updated {{ updatedon }}</span>
+          <span>Updated {{ province.last_updated | humanize }}</span>
         </span>
       </div>
       <div class="row">
@@ -209,9 +209,7 @@ export default {
   data() {
     return {
       province: [],
-      pro_name: "",
-      loading: true,
-      updatedon: ""
+      loading: true
     };
   },
   methods: {
@@ -231,8 +229,6 @@ export default {
       )
       .then(response => {
         this.province = response.data;
-        this.pro_name = response.data.name;
-        this.updatedon = moment(response.data.last_updated).fromNow();
         this.loading = false;
       })
       .catch(error => {
