@@ -5,7 +5,7 @@
     </div>
     <div class="main-content" v-else>
       <div class="d-sm-flex justify-content-between align-items-center mb-4">
-        <h3 class="covid-text mb-0 pt-4">{{ province.province_name }}</h3>
+        <h3 class="covid-text mb-0 pt-4">{{ province.name }}</h3>
         <span class="covid-text text-uppercase small font-weight-bold">
           <span class="m-1">
             <ion-icon name="refresh" class="small bolder"></ion-icon>
@@ -23,7 +23,7 @@
                     <h4 class="font-weight-bold">Confirmed</h4>
                   </div>
                   <div class="text-muted">
-                    <h3 class="font-weight-bold">{{ province.total_positive | padding }}</h3>
+                    <h3 class="font-weight-bold">{{ province.cases | padding }}</h3>
                   </div>
                 </div>
               </div>
@@ -39,7 +39,7 @@
                     <h4 class="font-weight-bold">Recovered</h4>
                   </div>
                   <div class="text-muted">
-                    <h3 class="font-weight-bold">{{ province.total_recovered | padding }}</h3>
+                    <h3 class="font-weight-bold">{{ province.recovered | padding }}</h3>
                   </div>
                 </div>
               </div>
@@ -55,7 +55,7 @@
                     <h4 class="font-weight-bold">Deceased</h4>
                   </div>
                   <div class="text-muted">
-                    <h3 class="font-weight-bold">{{ province.total_death | padding }}</h3>
+                    <h3 class="font-weight-bold">{{ province.deaths | padding }}</h3>
                   </div>
                 </div>
               </div>
@@ -71,7 +71,7 @@
                     <h4 class="font-weight-bold">Tested</h4>
                   </div>
                   <div class="text-muted">
-                    <h3 class="font-weight-bold">{{ province.total_tested | padding }}</h3>
+                    <h3 class="font-weight-bold">{{ province.tested | padding }}</h3>
                   </div>
                 </div>
               </div>
@@ -95,35 +95,35 @@
               <div class="clearfix mb-2">
                 <h4 class="small font-weight-bold covid-text text-uppercase">
                   <span class="float-left">PEOPLE IN QUARANTINE</span>
-                  <span class="float-right">{{ province.in_quarantine | padding }}</span>
+                  <span class="float-right">{{ province.quarantined | padding }}</span>
                 </h4>
               </div>
 
               <div class="progress localbar mb-4">
                 <div
                   class="progress-bar bar-danger"
-                  :style=" percentTest(province.in_quarantine, province.total_tested)"
+                  :style=" percentTest(province.quarantined, province.tested)"
                 ></div>
               </div>
 
               <div class="clearfix mb-2">
                 <h4 class="small font-weight-bold covid-text text-uppercase">
                   <span class="float-left">PEOPLE IN ISOLATION</span>
-                  <span class="float-right">{{ province.total_in_isolation | padding }}</span>
+                  <span class="float-right">{{ province.isolated | padding }}</span>
                 </h4>
               </div>
 
               <div class="progress localbar mb-4">
                 <div
                   class="progress-bar bar-warning"
-                  :style=" percentTest(province.total_in_isolation, province.num_of_isolation_bed)"
+                  :style=" percentTest(province.isolated, province.isolation_beds)"
                 ></div>
               </div>
 
               <div class="clearfix mb-2">
                 <h4 class="small font-weight-bold covid-text text-uppercase">
                   <span class="float-left">TESTED NEGATIVE</span>
-                  <span class="float-right">{{ province.total_negative | padding }}</span>
+                  <span class="float-right">{{ province.negative | padding }}</span>
                 </h4>
               </div>
 
@@ -137,14 +137,14 @@
               <div class="clearfix mb-2">
                 <h4 class="small font-weight-bold covid-text text-uppercase">
                   <span class="float-left">OCCUPIED ISOLATION BED</span>
-                  <span class="float-right">{{ province.occupied_isolation_bed | padding }}</span>
+                  <span class="float-right">{{ province.occupied_isolation_beds | padding }}</span>
                 </h4>
               </div>
 
               <div class="progress localbar mb-3">
                 <div
                   class="progress-bar bar-primary"
-                  :style=" percentTest(province.occupied_isolation_bed, province.num_of_isolation_bed)"
+                  :style=" percentTest(province.occupied_isolation_beds, province.isolation_beds)"
                 ></div>
               </div>
             </div>
@@ -156,9 +156,7 @@
               <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold h5 m-2">SAMPLES COLLECTED</p>
-                  <p
-                    class="font-weight-bold text-muted m-1 h4"
-                  >{{ province.total_samples_collected | padding }}</p>
+                  <p class="font-weight-bold text-muted m-1 h4">{{ province.samples | padding }}</p>
                 </div>
               </div>
             </div>
@@ -166,7 +164,7 @@
               <div class="card covid-text neu">
                 <div class="card-body">
                   <p class="font-weight-bold h5 m-2">NUMBER OF BEDS</p>
-                  <p class="font-weight-bold text-muted m-1 h4">{{ province.num_of_bed | padding }}</p>
+                  <p class="font-weight-bold text-muted m-1 h4">{{ province.beds | padding }}</p>
                 </div>
               </div>
             </div>
@@ -176,7 +174,7 @@
                   <p class="font-weight-bold m-2 h5">ISOLATION BEDS</p>
                   <p
                     class="font-weight-bold text-muted m-1 h4"
-                  >{{ province.num_of_isolation_bed | padding }}</p>
+                  >{{ province.isolation_beds | padding }}</p>
                 </div>
               </div>
             </div>
@@ -192,7 +190,7 @@
             </div>
           </div>
         </div>
-        <districts :province_name="pro_name" />
+        <districts :province_name="province.name" />
       </div>
     </div>
   </div>
@@ -228,13 +226,14 @@ export default {
   created() {
     axios
       .get(
-        "https://covidapi.mohp.gov.np/api/v1/stats/?province=" +
+        "https://whatsthemiti.herokuapp.com/api/covid/province/" +
           this.province_id
       )
       .then(response => {
-        this.province = response.data[0];
-        this.pro_name = response.data[0].province_name;
-        this.updatedon = moment(response.data[0].update_date).fromNow();
+        console.log(response.data);
+        this.province = response.data;
+        this.pro_name = response.data.name;
+        this.updatedon = moment(response.data.last_updated).fromNow();
         this.loading = false;
       })
       .catch(error => {

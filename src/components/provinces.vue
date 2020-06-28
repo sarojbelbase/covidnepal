@@ -9,7 +9,7 @@
         <div class="col-sm-6 col-md-4" v-for="(state,index) in state_cases" :key="index">
           <div class="card neu my-3 mx-1">
             <div class="card-body text-left">
-              <h4 class="card-title covid-text text-center mb-4">Province {{index}}</h4>
+              <h4 class="card-title covid-text text-center mb-4">{{state.name}}</h4>
 
               <div class="clearfix mb-2">
                 <h4 class="small font-weight-bold covid-text text-uppercase">
@@ -89,7 +89,7 @@ export default {
   },
   created() {
     axios
-      .get("https://whatsthemiti.herokuapp.com/api/provinces")
+      .get("https://whatsthemiti.herokuapp.com/api/covid/provinces")
       .then(response => {
         this.state_cases = response.data;
         this.loading = false;
