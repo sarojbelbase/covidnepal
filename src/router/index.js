@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import local from "@/components/local";
 import global from "@/components/global";
+import news from "@/components/news";
 import provinces from "@/components/provinces";
 import provincedetail from "@/components/provincedetail";
 import districts from "@/components/districts";
@@ -37,6 +38,11 @@ export default new Router({
       name: "provincedetail",
       component: provincedetail,
       props: true
+    },
+    {
+      path: "/news",
+      name: "news",
+      component: news
     }
   ]
 });

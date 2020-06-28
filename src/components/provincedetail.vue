@@ -190,7 +190,7 @@
             </div>
           </div>
         </div>
-        <districts :province_name="province.name" />
+        <districts :pro_id="province.id" />
       </div>
     </div>
   </div>
@@ -230,7 +230,6 @@ export default {
           this.province_id
       )
       .then(response => {
-        console.log(response.data);
         this.province = response.data;
         this.pro_name = response.data.name;
         this.updatedon = moment(response.data.last_updated).fromNow();

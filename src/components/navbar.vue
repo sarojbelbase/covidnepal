@@ -20,7 +20,10 @@
         <div class="collapse navbar-collapse" id="navdown-bar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <router-link :to="{ name: 'provinces' }" class="nav-link">Province</router-link>
+              <router-link :to="{ name: 'news' }" class="nav-link">News</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link :to="{ name: 'provinces' }" class="nav-link">Provinces</router-link>
             </li>
             <li class="nav-item">
               <router-link :to="{ name: 'local' }" class="nav-link">Nepal</router-link>

@@ -14,18 +14,18 @@
         <div class="col-sm-6 col-md-4" v-for="(district, index) in districts" :key="index">
           <div class="card neu my-3 mx-1">
             <div class="card-body text-left">
-              <h4 class="card-title covid-text text-center mb-4">{{ index }}</h4>
+              <h4 class="card-title covid-text text-center mb-4">{{ district.name }}</h4>
               <div class="clearfix mb-2">
                 <h4 class="small font-weight-bold covid-text text-uppercase">
                   <span class="float-left">CONFIRMED CASES</span>
-                  <span class="float-right">{{ district.confirmed | padding }}</span>
+                  <span class="float-right">{{ district.cases | padding }}</span>
                 </h4>
               </div>
 
               <div class="progress probar mb-3">
                 <div
                   class="progress-bar bar-warning"
-                  :style=" percentTest(district.confirmed, district.confirmed)"
+                  :style=" percentTest(district.cases, district.cases)"
                 ></div>
               </div>
 
@@ -39,21 +39,21 @@
               <div class="progress probar mb-3">
                 <div
                   class="progress-bar bar-success"
-                  :style=" percentTest(district.recovered, district.confirmed)"
+                  :style=" percentTest(district.recovered, district.cases)"
                 ></div>
               </div>
 
               <div class="clearfix mb-2">
                 <h4 class="small font-weight-bold covid-text text-uppercase">
                   <span class="float-left">DEATH CASES</span>
-                  <span class="float-right">{{ district.deceased | padding }}</span>
+                  <span class="float-right">{{ district.deaths | padding }}</span>
                 </h4>
               </div>
 
               <div class="progress probar mb-3">
                 <div
                   class="progress-bar bar-danger"
-                  :style=" percentTest(district.deceased, district.confirmed)"
+                  :style=" percentTest(district.deaths, district.cases)"
                 ></div>
               </div>
             </div>
@@ -68,7 +68,7 @@
 import axios from "axios";
 export default {
   name: "districts",
-  props: { province_name: String },
+  props: { pro_id: Number },
   data() {
     return {
       districts: [],
@@ -85,9 +85,11 @@ export default {
   },
   created() {
     axios
-      .get("https://api.nepalcovid19.org/state-district-wise.json")
+      .get(
+        "https://whatsthemiti.herokuapp.com/api/covid/districts/" + this.pro_id
+      )
       .then(response => {
-        this.districts = response.data[this.province_name].districtData;
+        this.districts = response.data;
         this.loading = false;
       })
       .catch(error => {
