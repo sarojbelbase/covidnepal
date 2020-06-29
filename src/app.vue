@@ -16,6 +16,10 @@ export default {
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth !important;
+}
+
 body {
   font-family: "Source Sans Pro", sans-serif !important;
   background-color: #0c0c0d !important;
