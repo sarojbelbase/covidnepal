@@ -22,7 +22,7 @@
       </div>
       <div class="col-md-4 col-sm-6 col-xl-3 p-3" v-for="(thenews, index) in news" :key="index">
         <div class="card neu news-card">
-          <img :src="thenews.image_url" class="card-img-top news-image" alt="thenews.title" />
+          <img :src="thenews.image_url" class="card-img-top news-image" :alt="thenews.title" />
           <div class="card-body">
             <h6 class="card-title covid-text news-title text-left">{{thenews.title}}</h6>
             <h6
