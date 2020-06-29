@@ -1,9 +1,6 @@
 <template>
   <div class="districts container">
-    <div class="loader" v-if="loading">
-      <div class="spinner-border text-warning" role="status"></div>
-    </div>
-    <div class="districts-stat" v-else>
+    <div class="districts-stat">
       <div class="d-sm-flex justify-content-between align-items-center mb-4">
         <h4 class="covid-text text-uppercase">Districts</h4>
         <span class="covid-text text-uppercase font-weight-bold">
@@ -11,7 +8,10 @@
         </span>
       </div>
       <div class="row">
-        <div class="col-sm-6 col-md-4" v-for="(district, index) in districts" :key="index">
+        <div v-if="loading">
+          <div class="spinner-border text-danger my-5" role="status"></div>
+        </div>
+        <div class="col-sm-6 col-md-4" v-for="(district, index) in districts" :key="index" v-else>
           <div class="card neu my-3 mx-1">
             <div class="card-body text-left">
               <h4 class="card-title covid-text text-center mb-4">{{ district.name }}</h4>
