@@ -1,12 +1,14 @@
 import Vue from "vue";
+import store from './store'
 import app from "./app.vue";
 import router from "./router";
-import store from './store'
+import moment from "moment";
+import InfiniteLoading from 'vue-infinite-loading';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import './reg-service-worker'
-import moment from "moment";
 
+Vue.use(InfiniteLoading, {});
 Vue.config.productionTip = false;
 Vue.config.ignoredElements = ['ion-icon'];
 
@@ -21,6 +23,26 @@ Vue.filter("padding", givenstat => {
 Vue.filter("humanize", givendate => {
   return moment(givendate).fromNow()
 });
+
+Vue.filter("ordinalize", givennumber => {
+  const suffix = ["th", "st", "nd", "rd"]
+  let thenumber = givennumber % 100;
+  return givennumber + (suffix[(thenumber - 20) % 10] || suffix[thenumber] || suffix[0]);
+});
+
+
+Vue.filter("dayify", givendate => {
+  const date = moment(givendate)
+  return (moment().diff(date, 'days') >= 2) ? date.fromNow() : date.calendar().split(' ')[0]
+});
+
+Vue.mixin({
+  data: () => {
+    return {
+      lockdownday: moment().diff('2020-03-24T00:00:00.000Z', 'days')
+    }
+  }
+})
 
 new Vue({
   router,

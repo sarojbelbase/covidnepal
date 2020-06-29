@@ -85,7 +85,7 @@
           <div class="col-lg-6">
             <div class="col-12">
               <div class="d-sm-flex justify-content-between align-items-center mb-3">
-                <h3 class="covid-text">Today</h3>
+                <h3 class="covid-text">{{ global.updated | dayify }}</h3>
               </div>
             </div>
             <div class="card mb-4 p-3 neu">
@@ -174,7 +174,6 @@
 
 <script>
 import axios from "axios";
-import moment from "moment";
 
 export default {
   name: "index",

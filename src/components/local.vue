@@ -6,7 +6,14 @@
     <div class="homepage" v-else>
       <div class="container">
         <div class="d-sm-flex justify-content-between align-items-center mb-4">
-          <h3 class="covid-text mb-0 pt-4">Overview</h3>
+          <h3 class="covid-text mb-0 pt-4">
+            <span>Overview</span>
+            <span
+              class="text-muted h5 font-weight-bold ml-1"
+              title="Since Lockdown"
+            >&bull; {{this.lockdownday | ordinalize }} Day</span>
+          </h3>
+
           <span class="covid-text text-uppercase small font-weight-bold">
             <span class="m-1">
               <ion-icon name="refresh" class="small bolder"></ion-icon>
@@ -148,7 +155,7 @@
           <div class="col-lg-6 col-md-6">
             <div class="d-sm-flex justify-content-between align-items-center mb-4">
               <h3 class="covid-text mb-0">
-                <span class="mr-1">Today</span>
+                <span class="mr-1">{{ local.updated_at | dayify }}</span>
               </h3>
             </div>
             <div class="card mb-4 neu p-3">
@@ -206,7 +213,6 @@
 
 <script>
 import axios from "axios";
-import moment from "moment";
 
 export default {
   name: "local",

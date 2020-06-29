@@ -5,7 +5,7 @@
     </div>
     <div class="main-content" v-else>
       <div class="d-sm-flex justify-content-between align-items-center mb-4">
-        <h3 class="covid-text mb-0 pt-4">{{ province.name }}</h3>
+        <h3 class="covid-text font-weight-bold pt-4">{{ province.name }}</h3>
         <span class="covid-text text-uppercase small font-weight-bold">
           <span class="m-1">
             <ion-icon name="refresh" class="small bolder"></ion-icon>
@@ -83,7 +83,13 @@
       <div class="row">
         <div class="col-12">
           <div class="d-sm-flex justify-content-between align-items-center mb-4">
-            <h4 class="covid-text">Details</h4>
+            <h4 class="covid-text">
+              <span class="mr-1 font-weight-bold">Details</span>
+              <span
+                class="text-muted small font-weight-bold"
+                title="Since Lockdown"
+              >&bull; {{this.lockdownday | ordinalize }} Day</span>
+            </h4>
           </div>
         </div>
       </div>
@@ -199,7 +205,7 @@
 <script>
 import districts from "@/components/districts";
 import axios from "axios";
-import moment from "moment";
+
 export default {
   name: "provincedetail",
   components: {

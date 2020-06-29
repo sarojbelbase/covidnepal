@@ -20,11 +20,7 @@
           <span>Updated {{ news[0].updated_at | humanize }}</span>
         </span>
       </div>
-      <div
-        class="col-md-4 col-sm-6 col-xl-3 p-3"
-        v-for="(thenews, index) in news"
-        :key="index"
-      >
+      <div class="col-md-4 col-sm-6 col-xl-3 p-3" v-for="(thenews, index) in news" :key="index">
         <div class="card neu news-card">
           <img :src="thenews.image_url" class="card-img-top news-image" alt="thenews.title" />
           <div class="card-body">
@@ -38,38 +34,80 @@
           </div>
         </div>
       </div>
+      <infinite-loading spinner="waveDots" @infinite="infiniteHandler">
+        <div class="text-info h4 text-center my-3" slot="no-more">You have travelled way too far.</div>
+        <div class="text-warning h4 text-center my-3" slot="no-results">No updates.</div>
+        <div class="text-danger h4 text-center my-3" slot="error">Couldn't get what you wanted :(</div>
+      </infinite-loading>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import moment from "moment";
 
 export default {
   name: "news",
   data() {
     return {
       news: [],
-      loading: true
+      limit: 24,
+      start: 0,
+      page: 1,
+      loading: true,
+      url: "https://nepalcorona.info/api/v1/news"
     };
-  },
-  beforeCreate() {
-    this.loading = true;
   },
   created() {
     axios
-      .get("https://nepalcorona.info/api/v1/news")
+      .get(this.url, {
+        params: {
+          page: this.page,
+          start: this.start,
+          limit: this.limit
+        }
+      })
       .then(response => {
-        this.news = response.data.data.sort((a, b) =>
-          a.created_at < b.created_at ? 1 : -1
-        );
-        this.loading = false;
+        if (response.data.data.length > 0) {
+          this.news = response.data.data;
+          this.loading = false;
+        } else {
+          console.log("Didn't found any updates.");
+        }
       })
       .catch(error => {
         console.log(error);
         this.loading = true;
       });
+  },
+  methods: {
+    infiniteHandler: function($state) {
+      this.page += 1;
+      this.start += 24;
+
+      axios
+        .get(this.url, {
+          params: {
+            page: this.page,
+            start: this.start,
+            limit: this.limit
+          }
+        })
+        .then(response => {
+          if (response.data.data.length > 0) {
+            response.data.data.forEach(article => this.news.push(article));
+            this.loading = false;
+            $state.loaded();
+          }
+        })
+        .catch(error => {
+          console.log(error);
+          $state.error();
+        });
+    }
+  },
+  beforeCreate() {
+    this.loading = true;
   }
 };
 </script>
