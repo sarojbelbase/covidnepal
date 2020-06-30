@@ -6,7 +6,7 @@ import news from "@/components/news";
 import provinces from "@/components/provinces";
 import provincedetail from "@/components/provincedetail";
 import districts from "@/components/districts";
-import rough from "@/components/rough";
+import maps from "@/components/map";
 
 Vue.use(Router);
 
@@ -46,9 +46,9 @@ export default new Router({
       component: news
     },
     {
-      path: "/rough",
-      name: "rough",
-      component: rough
+      path: "/maps",
+      name: "maps",
+      component: maps
     }
   ]
 });

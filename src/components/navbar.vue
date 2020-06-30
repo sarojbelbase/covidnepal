@@ -20,6 +20,9 @@
         <div class="collapse navbar-collapse" id="navdown-bar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+              <router-link :to="{ name: 'maps' }" class="nav-link">Maps</router-link>
+            </li>
+            <li class="nav-item">
               <router-link :to="{ name: 'news' }" class="nav-link">News</router-link>
             </li>
             <li class="nav-item">
