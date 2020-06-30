@@ -17,20 +17,14 @@
 		"register-service-worker": "^1.7.1",
 		"vue": "^2.6.11",
 		"vue-infinite-loading": "^2.4.5",
-		"vue-router": "^3.2.0",
-		"vuex": "^3.4.0"
+		"vue-router": "^3.2.0"
 	},
 	"devDependencies": {
 		"@vue/cli-plugin-babel": "~4.4.0",
 		"@vue/cli-plugin-pwa": "~4.4.0",
 		"@vue/cli-plugin-router": "~4.4.0",
-		"@vue/cli-plugin-vuex": "~4.4.0",
 		"@vue/cli-service": "~4.4.0",
 		"vue-template-compiler": "^2.6.11"
 	},
-	"browserslist": [
-		"> 1%",
-		"last 2 versions",
-		"not dead"
-	]
+	"browserslist": [ "> 1%", "last 2 versions", "not dead" ]
 }

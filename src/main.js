@@ -1,5 +1,4 @@
 import Vue from "vue";
-import store from './store'
 import app from "./app.vue";
 import router from "./router";
 import moment from "moment";
@@ -39,13 +38,12 @@ Vue.filter("dayify", givendate => {
 Vue.mixin({
   data: () => {
     return {
-      lockdownday: moment().diff('2020-03-24T00:00:00.000Z', 'days')
+      lockdownday: moment().diff('2020-03-24', 'days')
     }
   }
 })
 
 new Vue({
   router,
-  store,
   render: h => h(app)
 }).$mount("#app");
