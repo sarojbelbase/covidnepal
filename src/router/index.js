@@ -7,6 +7,8 @@ import provinces from "@/components/provinces";
 import provincedetail from "@/components/provincedetail";
 import districts from "@/components/districts";
 import maps from "@/components/map";
+import about from "@/components/about";
+
 
 Vue.use(Router);
 
@@ -49,6 +51,11 @@ export default new Router({
       path: "/maps",
       name: "maps",
       component: maps
-    }
+    },
+    {
+      path: "/about",
+      name: "about",
+      component: about
+    },
   ]
 });

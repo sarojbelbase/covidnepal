@@ -51,7 +51,7 @@
           </sequential-entrance>
         </div>
         <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
-          <sequential-entrance>
+          <sequential-entrance fromLeft>
             <div class="card neu py-2">
               <div class="card-body">
                 <div class="row align-items-center">
@@ -69,7 +69,7 @@
           </sequential-entrance>
         </div>
         <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
-          <sequential-entrance>
+          <sequential-entrance fromLeft>
             <div class="card neu py-2">
               <div class="card-body">
                 <div class="row align-items-center">
@@ -95,7 +95,7 @@
               <span class="mr-1 font-weight-bold">Details</span>
               <span
                 class="text-muted small font-weight-bold"
-                title="Since Lockdown"
+                title="Since Corona Pandemic"
               >&bull; {{this.lockdownday | ordinalize }} Day</span>
             </h4>
           </div>
@@ -167,7 +167,7 @@
           </sequential-entrance>
         </div>
         <div class="col">
-          <sequential-entrance>
+          <sequential-entrance fromLeft>
             <div class="row">
               <div class="col-lg-6 col-sm-6 mb-4">
                 <div class="card covid-text neu">

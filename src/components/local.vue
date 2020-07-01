@@ -10,7 +10,7 @@
             <span>Overview</span>
             <span
               class="text-muted h5 font-weight-bold ml-1"
-              title="Since Lockdown"
+              title="Since Corona Pandemic"
             >&bull; {{this.lockdownday | ordinalize }} Day</span>
           </h3>
 
@@ -59,7 +59,7 @@
             </sequential-entrance>
           </div>
           <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
-            <sequential-entrance>
+            <sequential-entrance fromLeft>
               <div class="card py-2 neu">
                 <div class="card-body">
                   <div class="row align-items-center">
@@ -77,7 +77,7 @@
             </sequential-entrance>
           </div>
           <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
-            <sequential-entrance>
+            <sequential-entrance fromLeft>
               <div class="card py-2 neu">
                 <div class="card-body">
                   <div class="row align-items-center">
@@ -168,7 +168,7 @@
                 <span class="mr-1">{{ local.updated_at | dayify }}</span>
               </h3>
             </div>
-            <sequential-entrance>
+            <sequential-entrance fromLeft>
               <div class="card mb-4 neu p-3">
                 <div class="card-body">
                   <ul class="list-group list-group-flush covid-text">

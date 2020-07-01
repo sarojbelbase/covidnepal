@@ -22,10 +22,7 @@
         <div class="collapse navbar-collapse" id="navdown-bar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <router-link :to="{ name: 'maps' }" class="nav-link">Maps</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link :to="{ name: 'news' }" class="nav-link">News</router-link>
+              <router-link :to="{ name: 'maps' }" class="nav-link">Districts</router-link>
             </li>
             <li class="nav-item">
               <router-link :to="{ name: 'provinces' }" class="nav-link">Provinces</router-link>
@@ -34,7 +31,16 @@
               <router-link :to="{ name: 'local' }" class="nav-link">Nepal</router-link>
             </li>
             <li class="nav-item">
-              <router-link :to="{ name: 'global' }" class="nav-link">Global</router-link>
+              <router-link :to="{ name: 'global' }" class="nav-link">WorldWide</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link :to="{ name: 'news' }" class="nav-link">News</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link :to="{ name: 'about' }" class="nav-link">About</router-link>
+            </li>
+            <li class="nav-item">
+              <a target="_blank" class="nav-link" href="https://t.me/covidnepal_bot">Telegram</a>
             </li>
           </ul>
         </div>

@@ -2,10 +2,10 @@
   <div class="provinces container-lg">
     <div class="provinces-stat">
       <h2 class="covid-alt py-4">
-        <span>
-          <ion-icon name="trending-up-outline" class="align-middle mr-1 covid-alt bold"></ion-icon>
-        </span>
         <span>Province Statistics</span>
+        <span>
+          <ion-icon name="trending-up-outline" class="align-middle ml-1 covid-alt bold"></ion-icon>
+        </span>
       </h2>
       <div class="loader" v-if="loading">
         <div class="spinner-border text-warning" role="status"></div>

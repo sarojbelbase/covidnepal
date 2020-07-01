@@ -52,7 +52,7 @@
             </sequential-entrance>
           </div>
           <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
-            <sequential-entrance>
+            <sequential-entrance fromLeft>
               <div class="card py-2 neu">
                 <div class="card-body">
                   <div class="row align-items-center">
@@ -70,7 +70,7 @@
             </sequential-entrance>
           </div>
           <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
-            <sequential-entrance>
+            <sequential-entrance fromLeft>
               <div class="card py-2 neu">
                 <div class="card-body">
                   <div class="row align-items-center">
@@ -139,7 +139,7 @@
                 <h3 class="covid-text mb-0">Details</h3>
               </div>
             </div>
-            <sequential-entrance>
+            <sequential-entrance fromLeft>
               <div class="row">
                 <div class="col-lg-6 col-sm-6 mb-4">
                   <div class="card covid-text neu">

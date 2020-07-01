@@ -45,8 +45,8 @@ body {
   border-radius: 12px !important;
   background: -o-linear-gradient(225deg, #0a0a0a, #0d0d0e);
   background: linear-gradient(225deg, #0a0a0a, #0d0d0e);
-  -webkit-box-shadow: -6px 6px 4px #0a0a0b, 6px -6px 3px #0e0e0f;
-  box-shadow: -6px 6px 4px #0a0a0b, 6px -6px 3px #0e0e0f;
+  -webkit-box-shadow: -5px 5px 5px #0a0a0b, 5px -5px 5px #0e0e0f;
+  box-shadow: -5px 5px 6px #0a0a0b, 5px -5px 5px #0e0e0f;
 }
 
 .neuify {
