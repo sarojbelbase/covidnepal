@@ -1,66 +1,68 @@
 <template>
   <div class="maps">
-    <div class="loader" v-if="loading">
-      <div class="spinner-border text-warning" role="status"></div>
-    </div>
-    <div class="mapworks" v-else>
-      <l-map
-        :center="[28.082, 84.078]"
-        :zoom="7"
-        style="height: 90vh;background-color: #0c0c0d;"
-        :options="mapOptions"
+    <l-map
+      :center="[28.082, 84.078]"
+      :zoom="7"
+      style="height: 90vh; background-color: #0c0c0d; font-family: 'Source Sans Pro';"
+      :options="mapOptions"
+    >
+      <choropleth-layer
+        :data="covidcases"
+        title-key="name"
+        id-key="name"
+        :value="value"
+        :extra-values="extraValues"
+        geojson-id-key="district"
+        :geojson="geodata"
+        :color-scale="colorScale"
+        strokeColor="333333"
+        currentStrokeColor="999999"
+        :currentStrokeWidth="2"
+        :strokeWidth="2"
       >
-        <l-choropleth-layer
-          :data="covidcases"
-          title-key="name"
-          id-key="name"
-          :value="value"
-          :extra-values="extraValues"
-          geojson-id-key="district"
-          :geojson="geodata"
-          :color-scale="colorScale"
-          style="color: #0c0c0d;"
-          strokeColor="0c0c0c"
-          currentStrokeColor="0c0c0c"
-          :currentStrokeWidth="5"
-          :strokeWidth="4"
-        >
-          <template slot-scope="props">
-            <l-info-control
-              :item="props.currentItem"
-              :unit="props.unit"
-              title="COVID-19 CASES"
-              placeholder="Hover over districts to get the statistics"
-              position="topright"
-            ></l-info-control>
-          </template>
-        </l-choropleth-layer>
-      </l-map>
-    </div>
+        <template slot-scope="props">
+          <info-control
+            :item="props.currentItem"
+            :unit="props.unit"
+            title="District-Wide Covid Cases"
+            placeholder="Hover over districts to see stats."
+            position="topright"
+          ></info-control>
+        </template>
+      </choropleth-layer>
+    </l-map>
   </div>
 </template>
 
 <script>
-import { InfoControl, ReferenceChart, ChoroplethLayer } from "vue-choropleth";
+import { InfoControl, ChoroplethLayer } from "vue-choropleth";
 import nepalGeojson from "../assets/data/nepal.json";
 import { LMap } from "vue2-leaflet";
-import chroma from "chroma-js/chroma";
 import axios from "axios";
 
 export default {
   name: "maps",
   components: {
     LMap,
-    "l-info-control": InfoControl,
-    "l-reference-chart": ReferenceChart,
-    "l-choropleth-layer": ChoroplethLayer
+    "info-control": InfoControl,
+    "choropleth-layer": ChoroplethLayer
   },
   data() {
     return {
       loading: true,
       covidcases: [],
       geodata: [],
-      colorScale: chroma.brewer.OrRd,
+      colorScale: [
+        "#333333",
+        "#252525",
+        "#525252",
+        "#737373",
+        "#969696",
+        "#bdbdbd",
+        "#d9d9d9",
+        "#f0f0f0",
+        "#f1f1f1"
+      ],
       value: {
         key: "cases",
         metric: "Positive Cases"
@@ -114,12 +116,4 @@ export default {
 
 <style>
 @import "../../node_modules/leaflet/dist/leaflet.css";
-
-.maps {
-  font-family: "Source Sans Pro", sans-serif !important;
-}
-
-.loader {
-  z-index: 29;
-}
 </style>
