@@ -12,52 +12,54 @@
           <div class="spinner-border text-danger my-5" role="status"></div>
         </div>
         <div class="col-sm-6 col-md-4" v-for="(district, index) in districts" :key="index" v-else>
-          <div class="card neu my-3 mx-1">
-            <div class="card-body text-left">
-              <h4 class="card-title covid-text text-center mb-4">{{ district.name }}</h4>
-              <div class="clearfix mb-2">
-                <h4 class="small font-weight-bold covid-text text-uppercase">
-                  <span class="float-left">CONFIRMED CASES</span>
-                  <span class="float-right">{{ district.cases | padding }}</span>
-                </h4>
-              </div>
+          <sequential-entrance fromBottom>
+            <div class="card neu my-3 mx-1">
+              <div class="card-body text-left">
+                <h4 class="card-title covid-text text-center mb-4">{{ district.name }}</h4>
+                <div class="clearfix mb-2">
+                  <h4 class="small font-weight-bold covid-text text-uppercase">
+                    <span class="float-left">CONFIRMED CASES</span>
+                    <span class="float-right">{{ district.cases | padding }}</span>
+                  </h4>
+                </div>
 
-              <div class="progress probar mb-3">
-                <div
-                  class="progress-bar bar-warning"
-                  :style=" percentTest(district.cases, district.cases)"
-                ></div>
-              </div>
+                <div class="progress probar mb-3">
+                  <div
+                    class="progress-bar bar-warning"
+                    :style=" percentTest(district.cases, district.cases)"
+                  ></div>
+                </div>
 
-              <div class="clearfix mb-2">
-                <h4 class="small font-weight-bold covid-text text-uppercase">
-                  <span class="float-left">RECOVERED CASES</span>
-                  <span class="float-right">{{ district.recovered | padding }}</span>
-                </h4>
-              </div>
+                <div class="clearfix mb-2">
+                  <h4 class="small font-weight-bold covid-text text-uppercase">
+                    <span class="float-left">RECOVERED CASES</span>
+                    <span class="float-right">{{ district.recovered | padding }}</span>
+                  </h4>
+                </div>
 
-              <div class="progress probar mb-3">
-                <div
-                  class="progress-bar bar-success"
-                  :style=" percentTest(district.recovered, district.cases)"
-                ></div>
-              </div>
+                <div class="progress probar mb-3">
+                  <div
+                    class="progress-bar bar-success"
+                    :style=" percentTest(district.recovered, district.cases)"
+                  ></div>
+                </div>
 
-              <div class="clearfix mb-2">
-                <h4 class="small font-weight-bold covid-text text-uppercase">
-                  <span class="float-left">DEATH CASES</span>
-                  <span class="float-right">{{ district.deaths | padding }}</span>
-                </h4>
-              </div>
+                <div class="clearfix mb-2">
+                  <h4 class="small font-weight-bold covid-text text-uppercase">
+                    <span class="float-left">DEATH CASES</span>
+                    <span class="float-right">{{ district.deaths | padding }}</span>
+                  </h4>
+                </div>
 
-              <div class="progress probar mb-3">
-                <div
-                  class="progress-bar bar-danger"
-                  :style=" percentTest(district.deaths, district.cases)"
-                ></div>
+                <div class="progress probar mb-3">
+                  <div
+                    class="progress-bar bar-danger"
+                    :style=" percentTest(district.deaths, district.cases)"
+                  ></div>
+                </div>
               </div>
             </div>
-          </div>
+          </sequential-entrance>
         </div>
       </div>
     </div>

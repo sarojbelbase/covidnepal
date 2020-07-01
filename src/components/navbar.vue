@@ -6,7 +6,7 @@
           <img src="../assets/images/logo.svg" type="image/svg" alt="covidnepal" class="logo" />
         </router-link>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler no-outline"
           type="button"
           data-toggle="collapse"
           data-target="#navdown-bar"
@@ -14,7 +14,9 @@
           aria-expanded="false"
           aria-label="See Navigation Contents"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span>
+            <ion-icon name="reorder-three-outline" class="larger"></ion-icon>
+          </span>
         </button>
 
         <div class="collapse navbar-collapse" id="navdown-bar">
@@ -53,5 +55,9 @@ export default {
 <style>
 .logo {
   height: 32px;
+}
+.no-outline {
+  outline: none !important;
+  border: 0 !important;
 }
 </style>

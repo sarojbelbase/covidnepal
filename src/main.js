@@ -3,10 +3,13 @@ import app from "./app.vue";
 import router from "./router";
 import moment from "moment";
 import InfiniteLoading from 'vue-infinite-loading';
+import SequentialEntrance from 'vue-sequential-entrance'
+import 'vue-sequential-entrance/vue-sequential-entrance.css'
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import './reg-service-worker'
 
+Vue.use(SequentialEntrance);
 Vue.use(InfiniteLoading, {});
 Vue.config.productionTip = false;
 Vue.config.ignoredElements = ['ion-icon'];

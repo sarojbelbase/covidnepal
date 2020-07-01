@@ -15,68 +15,76 @@
       </div>
       <div class="row">
         <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
-          <div class="card neu py-2">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col">
-                  <div class="text-uppercase text-warning mb-1">
-                    <h4 class="font-weight-bold">Confirmed</h4>
-                  </div>
-                  <div class="text-muted">
-                    <h3 class="font-weight-bold">{{ province.cases | padding }}</h3>
+          <sequential-entrance fromLeft>
+            <div class="card neu py-2">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="text-uppercase text-warning mb-1">
+                      <h4 class="font-weight-bold">Confirmed</h4>
+                    </div>
+                    <div class="text-muted">
+                      <h3 class="font-weight-bold">{{ province.cases | padding }}</h3>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </sequential-entrance>
         </div>
         <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
-          <div class="card neu py-2">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col">
-                  <div class="text-uppercase text-success">
-                    <h4 class="font-weight-bold">Recovered</h4>
-                  </div>
-                  <div class="text-muted">
-                    <h3 class="font-weight-bold">{{ province.recovered | padding }}</h3>
+          <sequential-entrance fromLeft>
+            <div class="card neu py-2">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="text-uppercase text-success">
+                      <h4 class="font-weight-bold">Recovered</h4>
+                    </div>
+                    <div class="text-muted">
+                      <h3 class="font-weight-bold">{{ province.recovered | padding }}</h3>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </sequential-entrance>
         </div>
         <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
-          <div class="card neu py-2">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col">
-                  <div class="text-uppercase text-danger">
-                    <h4 class="font-weight-bold">Deceased</h4>
-                  </div>
-                  <div class="text-muted">
-                    <h3 class="font-weight-bold">{{ province.deaths | padding }}</h3>
+          <sequential-entrance>
+            <div class="card neu py-2">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="text-uppercase text-danger">
+                      <h4 class="font-weight-bold">Deceased</h4>
+                    </div>
+                    <div class="text-muted">
+                      <h3 class="font-weight-bold">{{ province.deaths | padding }}</h3>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </sequential-entrance>
         </div>
         <div class="col-md-6 col-sm-6 col-xl-3 mb-4">
-          <div class="card neu py-2">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col">
-                  <div class="text-uppercase text-info">
-                    <h4 class="font-weight-bold">Tested</h4>
-                  </div>
-                  <div class="text-muted">
-                    <h3 class="font-weight-bold">{{ province.tested | padding }}</h3>
+          <sequential-entrance>
+            <div class="card neu py-2">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="text-uppercase text-info">
+                      <h4 class="font-weight-bold">Tested</h4>
+                    </div>
+                    <div class="text-muted">
+                      <h3 class="font-weight-bold">{{ province.tested | padding }}</h3>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </sequential-entrance>
         </div>
       </div>
 
@@ -96,105 +104,109 @@
 
       <div class="row">
         <div class="col-lg-6 mb-4">
-          <div class="card neu mb-4 px-4 py-1">
-            <div class="card-body">
-              <div class="clearfix mb-2">
-                <h4 class="small font-weight-bold covid-text text-uppercase">
-                  <span class="float-left">PEOPLE IN QUARANTINE</span>
-                  <span class="float-right">{{ province.quarantined | padding }}</span>
-                </h4>
-              </div>
+          <sequential-entrance fromLeft>
+            <div class="card neu mb-4 px-4 py-1">
+              <div class="card-body">
+                <div class="clearfix mb-2">
+                  <h4 class="small font-weight-bold covid-text text-uppercase">
+                    <span class="float-left">PEOPLE IN QUARANTINE</span>
+                    <span class="float-right">{{ province.quarantined | padding }}</span>
+                  </h4>
+                </div>
 
-              <div class="progress localbar mb-4">
-                <div
-                  class="progress-bar bar-danger"
-                  :style=" percentTest(province.quarantined, province.tested)"
-                ></div>
-              </div>
+                <div class="progress localbar mb-4">
+                  <div
+                    class="progress-bar bar-danger"
+                    :style=" percentTest(province.quarantined, province.tested)"
+                  ></div>
+                </div>
 
-              <div class="clearfix mb-2">
-                <h4 class="small font-weight-bold covid-text text-uppercase">
-                  <span class="float-left">PEOPLE IN ISOLATION</span>
-                  <span class="float-right">{{ province.isolated | padding }}</span>
-                </h4>
-              </div>
+                <div class="clearfix mb-2">
+                  <h4 class="small font-weight-bold covid-text text-uppercase">
+                    <span class="float-left">PEOPLE IN ISOLATION</span>
+                    <span class="float-right">{{ province.isolated | padding }}</span>
+                  </h4>
+                </div>
 
-              <div class="progress localbar mb-4">
-                <div
-                  class="progress-bar bar-warning"
-                  :style=" percentTest(province.isolated, province.isolation_beds)"
-                ></div>
-              </div>
+                <div class="progress localbar mb-4">
+                  <div
+                    class="progress-bar bar-warning"
+                    :style=" percentTest(province.isolated, province.isolation_beds)"
+                  ></div>
+                </div>
 
-              <div class="clearfix mb-2">
-                <h4 class="small font-weight-bold covid-text text-uppercase">
-                  <span class="float-left">TESTED NEGATIVE</span>
-                  <span class="float-right">{{ province.negative | padding }}</span>
-                </h4>
-              </div>
+                <div class="clearfix mb-2">
+                  <h4 class="small font-weight-bold covid-text text-uppercase">
+                    <span class="float-left">TESTED NEGATIVE</span>
+                    <span class="float-right">{{ province.negative | padding }}</span>
+                  </h4>
+                </div>
 
-              <div class="progress localbar mb-4">
-                <div
-                  class="progress-bar bar-success"
-                  :style=" percentTest(province.total_negative, province.total_tested)"
-                ></div>
-              </div>
+                <div class="progress localbar mb-4">
+                  <div
+                    class="progress-bar bar-success"
+                    :style=" percentTest(province.total_negative, province.total_tested)"
+                  ></div>
+                </div>
 
-              <div class="clearfix mb-2">
-                <h4 class="small font-weight-bold covid-text text-uppercase">
-                  <span class="float-left">OCCUPIED ISOLATION BED</span>
-                  <span class="float-right">{{ province.occupied_isolation_beds | padding }}</span>
-                </h4>
-              </div>
+                <div class="clearfix mb-2">
+                  <h4 class="small font-weight-bold covid-text text-uppercase">
+                    <span class="float-left">OCCUPIED ISOLATION BED</span>
+                    <span class="float-right">{{ province.occupied_isolation_beds | padding }}</span>
+                  </h4>
+                </div>
 
-              <div class="progress localbar mb-3">
-                <div
-                  class="progress-bar bar-primary"
-                  :style=" percentTest(province.occupied_isolation_beds, province.isolation_beds)"
-                ></div>
+                <div class="progress localbar mb-3">
+                  <div
+                    class="progress-bar bar-primary"
+                    :style=" percentTest(province.occupied_isolation_beds, province.isolation_beds)"
+                  ></div>
+                </div>
               </div>
             </div>
-          </div>
+          </sequential-entrance>
         </div>
         <div class="col">
-          <div class="row">
-            <div class="col-lg-6 col-sm-6 mb-4">
-              <div class="card covid-text neu">
-                <div class="card-body">
-                  <p class="font-weight-bold h5 m-2">SAMPLES COLLECTED</p>
-                  <p class="font-weight-bold text-muted m-1 h4">{{ province.samples | padding }}</p>
+          <sequential-entrance>
+            <div class="row">
+              <div class="col-lg-6 col-sm-6 mb-4">
+                <div class="card covid-text neu">
+                  <div class="card-body">
+                    <p class="font-weight-bold h5 m-2">SAMPLES COLLECTED</p>
+                    <p class="font-weight-bold text-muted m-1 h4">{{ province.samples | padding }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-sm-6 mb-4">
+                <div class="card covid-text neu">
+                  <div class="card-body">
+                    <p class="font-weight-bold h5 m-2">NUMBER OF BEDS</p>
+                    <p class="font-weight-bold text-muted m-1 h4">{{ province.beds | padding }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-sm-6 mb-4">
+                <div class="card covid-text neu">
+                  <div class="card-body">
+                    <p class="font-weight-bold m-2 h5">ISOLATION BEDS</p>
+                    <p
+                      class="font-weight-bold text-muted m-1 h4"
+                    >{{ province.isolation_beds | padding }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-sm-6 mb-4">
+                <div class="card covid-text neu">
+                  <div class="card-body">
+                    <p class="font-weight-bold h5 m-2">OCCUPIED VENTILATORS</p>
+                    <p
+                      class="font-weight-bold text-muted m-1 h4"
+                    >{{ province.occupied_ventilators | padding }}</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 col-sm-6 mb-4">
-              <div class="card covid-text neu">
-                <div class="card-body">
-                  <p class="font-weight-bold h5 m-2">NUMBER OF BEDS</p>
-                  <p class="font-weight-bold text-muted m-1 h4">{{ province.beds | padding }}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-sm-6 mb-4">
-              <div class="card covid-text neu">
-                <div class="card-body">
-                  <p class="font-weight-bold m-2 h5">ISOLATION BEDS</p>
-                  <p
-                    class="font-weight-bold text-muted m-1 h4"
-                  >{{ province.isolation_beds | padding }}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-sm-6 mb-4">
-              <div class="card covid-text neu">
-                <div class="card-body">
-                  <p class="font-weight-bold h5 m-2">OCCUPIED VENTILATORS</p>
-                  <p
-                    class="font-weight-bold text-muted m-1 h4"
-                  >{{ province.occupied_ventilators | padding }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          </sequential-entrance>
         </div>
         <districts :pro_id="province.id" />
       </div>

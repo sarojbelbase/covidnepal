@@ -124,6 +124,9 @@ body {
 ion-icon {
   color: #c0c0c0;
 }
+ion-icon.larger {
+  font-size: 36px !important;
+}
 ion-icon.large {
   font-size: 24px !important;
 }

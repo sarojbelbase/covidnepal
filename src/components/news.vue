@@ -5,7 +5,7 @@
     </div>
     <div class="row" v-else>
       <div class="d-sm-flex justify-content-between align-items-center my-4">
-        <div class="d-inline-block">
+        <div>
           <h3 class="covid-text">
             <span>News & Updates</span>
             <span class="ml-1 align-middle">
@@ -21,18 +21,20 @@
         </span>
       </div>
       <div class="col-md-4 col-sm-6 col-xl-3 p-3" v-for="(thenews, index) in news" :key="index">
-        <div class="card neu news-card">
-          <img :src="thenews.image_url" class="card-img-top news-image" :alt="thenews.title" />
-          <div class="card-body">
-            <h6 class="card-title covid-text news-title text-left">{{thenews.title}}</h6>
-            <h6
-              class="text-info float-left small font-weight-bold mt-3 text-uppercase"
-            >{{thenews.created_at | humanize }}</h6>
-            <a :href="thenews.url" target="_blank" rel="noopener noreferrer">
-              <h6 class="text-muted float-right small font-weight-bold mt-3">READ MORE</h6>
-            </a>
+        <sequential-entrance fromLeft>
+          <div class="card neu news-card">
+            <img :src="thenews.image_url" class="card-img-top news-image" :alt="thenews.title" />
+            <div class="card-body">
+              <h6 class="card-title covid-text news-title text-left">{{thenews.title}}</h6>
+              <h6
+                class="text-info float-left small font-weight-bold mt-3 text-uppercase"
+              >{{thenews.created_at | humanize }}</h6>
+              <a :href="thenews.url" target="_blank" rel="noopener noreferrer">
+                <h6 class="text-muted float-right small font-weight-bold mt-3">READ MORE</h6>
+              </a>
+            </div>
           </div>
-        </div>
+        </sequential-entrance>
       </div>
       <infinite-loading spinner="waveDots" @infinite="infiniteHandler">
         <div class="text-info h4 text-center my-3" slot="no-more">You have travelled way too far.</div>
