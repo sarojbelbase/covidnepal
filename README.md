@@ -24,7 +24,7 @@
 
 <h4><a target="_blank" href="https://covidnepal.now.sh">Go to website | covidnepal.now.sh</a><h4>
 <h4><a target="_blank" href="https://t.me/covidnepal_bot">Go to telegram bot | t.me/covidnepal_bot</a><h4>
-
+<h4><a target="_blank" href="https://progressiveapp.store/mypwa/covidnepal">Go to pwa store | progressiveapp.store/mypwa/covidnepal </a><h4>
 
 ## Prerequisites
 
