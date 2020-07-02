@@ -3,9 +3,11 @@
 <strong>Yet another look into covid-19 cases in nepal</strong><br>
 </p>
 
+<img src="./public/img/img/summary.png" width="100%" height="auto"><br>
+
 ## Introduction
 
-**covidnepal** is just another try to look into covidcases inside Nepal. I'm a bit late to this game but that has always been my feature, I guess. It is made to provide unreliable data and provide as many information as possible inside a same application. It depends on reliable API (after spending a months for it). This application features PWA (Progressive Web App) technology, meaning it could be installed inside the browser easily like a mobile application and later could be run like an application. This application follows **neumorphic** design style for UI & smoother animation for your eyes.
+**covidnepal** is just another try to look into covidcases inside Nepal.  It was made to cover reliable and more informational data as possible inside a same application. It depends on reliable API (after spending a months for it). This application uses PWA (Progressive Web App) technology, meaning it could be installed inside the browser easily like a mobile application and later could be run like an application. This application also follows **neumorphic** design style for UI & smoother animations for better UX.
 
 
 ### Features
@@ -16,7 +18,7 @@
 * Installable on any web browser & smartphones
 * Alternate way of serving through telegram bot
 * Neumorphic styled layout
-* Dark mode by default
+* Dark mode enabled by default
 
 ### Links
 
