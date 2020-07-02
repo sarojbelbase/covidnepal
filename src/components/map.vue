@@ -42,6 +42,17 @@ import axios from "axios";
 
 export default {
   name: "maps",
+  metaInfo() {
+    return {
+      title: "District-Level Map Views",
+      meta: [
+        {
+          name: "description",
+          content: "Map viewing covidcases inside nepal."
+        }
+      ]
+    };
+  },
   components: {
     LMap,
     "info-control": InfoControl,

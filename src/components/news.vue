@@ -60,6 +60,17 @@ export default {
       url: "https://nepalcorona.info/api/v1/news"
     };
   },
+  metaInfo() {
+    return {
+      title: "News & Updates | covidnepal",
+      meta: [
+        {
+          name: "description",
+          content: "Follow news about covidcases from reputed news industries."
+        }
+      ]
+    };
+  },
   created() {
     axios
       .get(this.url, {

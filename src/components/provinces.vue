@@ -86,6 +86,17 @@ export default {
       loading: true
     };
   },
+    metaInfo() {
+    return {
+      title: "covidnepal | provinces",
+      meta: [
+        {
+          name: "description",
+          content: "give surface look on covidcases inside provinces."
+        }
+      ]
+    };
+  },
   methods: {
     percentTest: function(sample, total) {
       return "width: " + Math.round((sample / total) * 100) + "%;";

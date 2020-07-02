@@ -190,7 +190,18 @@
 import axios from "axios";
 
 export default {
-  name: "index",
+  name: "global",
+  metaInfo() {
+    return {
+      title: "Worldwide Covid-19 Impacts",
+      meta: [
+        {
+          name: "description",
+          content: "Live updates on worldwide impacts made by covid-19."
+        }
+      ]
+    };
+  },
   data() {
     return {
       global: [],

@@ -49,5 +49,19 @@
   </div>
 </template>
 
-<style>
-</style>
+<script>
+export default {
+  name: "about",
+  metaInfo() {
+    return {
+      title: "ThisIsAboutPage.",
+      meta: [
+        {
+          name: "description",
+          content: "Explaining stuffs how & why I made this site."
+        }
+      ]
+    };
+  }
+};
+</script>

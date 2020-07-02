@@ -223,6 +223,18 @@ export default {
   components: {
     districts
   },
+  metaInfo() {
+    return {
+      title: "covidnepal | provincedetails",
+      meta: [
+        {
+          name: "description",
+          content:
+            "give a detail look on covidcases inside province " + province_id
+        }
+      ]
+    };
+  },
   props: ["province_id"],
   data() {
     return {
