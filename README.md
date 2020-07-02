@@ -1,13 +1,13 @@
 <p align="center">
 <img src="./src/assets/images/black.svg" width="35%" height="auto"><br>
-<strong>Yet another look into covid-19 cases in nepal</strong><br>
+<strong>Yet another look into covid-19 cases inside nepal</strong><br>
 </p>
 
 <img src="./public/img/img/summary.png" width="100%" height="auto"><br>
 
 ## Introduction
 
-**covidnepal** is just another try to look into covidcases inside Nepal.  It was made to cover reliable and more informational data as possible inside a same application. It depends on reliable API (after spending a months for it). This application uses PWA (Progressive Web App) technology, meaning it could be installed inside the browser easily like a mobile application and later could be run like an application. This application also follows **neumorphic** design style for UI & smoother animations for better UX.
+**covidnepal** is just "another try" to look into covidcases inside Nepal.  It was made to cover reliable, detailed and more informational data as possible inside a same application. It depends on reliable API (after spending months for it). This application uses PWA (Progressive Web App) technology, meaning it could be installed inside the browser easily like a mobile application and later could be run like an application. This application also follows **neumorphic** design style for UI & smoother animations for better UX.
 
 
 ### Features
@@ -22,9 +22,9 @@
 
 ### Links
 
-<h4><a target="_blank" href="https://covidnepal.now.sh">Go to website | covidnepal.now.sh</a><h4>
-<h4><a target="_blank" href="https://t.me/covidnepal_bot">Go to telegram bot | t.me/covidnepal_bot</a><h4>
-<h4><a target="_blank" href="https://progressiveapp.store/mypwa/covidnepal">Go to pwa store | progressiveapp.store/mypwa/covidnepal </a><h4>
+<strong><a target="_blank" href="https://covidnepal.now.sh">website > covidnepal.now.sh</a></strong><br>
+<strong><a target="_blank" href="https://t.me/covidnepal_bot">telegram bot > t.me/covidnepal_bot</a></strong><br>
+<strong><a target="_blank" href="https://progressiveapp.store/mypwa/covidnepal">pwa store > progressiveapp.store/mypwa/covidnepal </a></strong>
 
 ## Prerequisites
 
@@ -61,14 +61,13 @@
 
 ## Installation
 
-Go to root folder & install the packages using: `yarn install`
+Go to root folder & install the required packages using: `yarn install`
 
 
 ## Development Setups
 
- To compiles and hot-reload for every changes: `yarn serve`
+ To compiles & hot-reload for every changes: `yarn serve`
 
  To compiles & minify for production: `yarn build`
 
-
-### Made with ❤️ in Nepal.
+#### Contributions are welcome &bull; Made with ❤️ in Nepal.
