@@ -22,6 +22,15 @@
         <div class="collapse navbar-collapse" id="navdown-bar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+              <span
+                class="nav-link text-warning cursor"
+                v-if="updateExists"
+                @click="refreshApp"
+                @mouseover="showMessage"
+                @mouseout="goBack"
+              >{{this.defMessage}}</span>
+            </li>
+            <li class="nav-item">
               <router-link :to="{ name: 'maps' }" class="nav-link">Districts</router-link>
             </li>
             <li class="nav-item">
@@ -53,7 +62,39 @@
 export default {
   name: "navbar",
   data() {
-    return {};
+    return {
+      refreshing: false,
+      registration: null,
+      updateExists: false,
+      defMessage: "Update Available!"
+    };
+  },
+  created() {
+    document.addEventListener("swUpdated", this.showRefreshUI, { once: true });
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (this.refreshing) return;
+      this.refreshing = true;
+      window.location.reload();
+    });
+  },
+  methods: {
+    showMessage(e) {
+      this.defMessage = "Click to Update!";
+    },
+    goBack(e) {
+      this.defMessage = "Update Available!";
+    },
+    showRefreshUI(e) {
+      this.registration = e.detail;
+      this.updateExists = true;
+    },
+    refreshApp() {
+      this.updateExists = false;
+      if (!this.registration || !this.registration.waiting) {
+        return;
+      }
+      this.registration.waiting.postMessage("skipWaiting");
+    }
   }
 };
 </script>
@@ -65,5 +106,9 @@ export default {
 .no-outline {
   outline: none !important;
   border: 0 !important;
+}
+
+.cursor {
+  cursor: pointer;
 }
 </style>
