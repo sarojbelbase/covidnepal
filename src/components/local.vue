@@ -235,6 +235,17 @@ export default {
       loading: true
     };
   },
+  metaInfo() {
+    return {
+      title: "covidnepal : yet another look at covid-19 cases in Nepal",
+      meta: [
+        {
+          name: "description",
+          content: "A detailed COVID-19 tracker made for Nepal."
+        }
+      ]
+    };
+  },
   methods: {
     percentTest: function(sample, total) {
       return "width: " + Math.round((sample / total) * 100) + "%;";
