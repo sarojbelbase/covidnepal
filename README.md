@@ -10,16 +10,16 @@
 </span>
 ## Introduction
 
-**covidnepal** is just "another try" to look into covidcases inside Nepal.  It was made to cover reliable, detailed and more informational data as possible inside a same application. It depends on reliable API (after spending months for it). This application uses PWA (Progressive Web App) technology, meaning it could be installed inside the browser easily like a mobile application and later could be run like an application. This application also follows **neumorphic** design style for UI & smoother animations for better UX.
+**covidnepal** is just "another try" to look into covidcases inside Nepal.  The main purpose of building this one again is to provide reliable, detailed & more informational data inside a same application. It depends on reliable API (after spending months for it). It uses PWA (Progressive Web App) technology, meaning it could be installed inside the browser easily like a mobile application and later could be run like an application & follows **neumorphic** design style & smoother animations for UI/UX.
 
 
 ### Features
 
 * Lists covid-cases by districts & provinces
-* Tracks cases worldwide live
-* Auto updating covid related news & update
+* Tracks live cases worldwide
+* Auto updating covid related news
 * Installable on any web browser & smartphones
-* Alternate way of serving through telegram bot
+* Alternate way for accessing data through a telegram bot
 * Neumorphic styled layout
 * Dark mode enabled by default
 
