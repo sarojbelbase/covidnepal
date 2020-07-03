@@ -3,8 +3,11 @@
 <strong>Yet another look into covid-19 cases inside nepal</strong><br>
 </p>
 
-<img src="./public/img/img/summary.png" width="100%" height="auto"><br>
-
+<img src="./public/img/summary.png" width="100%" height="auto"><br>
+<span align="center">
+<img src="./public/img/screenshot_one.jpg" width="48%" height="auto">
+<img src="./public/img/screenshot_two.jpg" width="48%" height="auto">
+</span>
 ## Introduction
 
 **covidnepal** is just "another try" to look into covidcases inside Nepal.  It was made to cover reliable, detailed and more informational data as possible inside a same application. It depends on reliable API (after spending months for it). This application uses PWA (Progressive Web App) technology, meaning it could be installed inside the browser easily like a mobile application and later could be run like an application. This application also follows **neumorphic** design style for UI & smoother animations for better UX.
@@ -50,6 +53,7 @@
 * <a target="_blank" href="https://ionicons.com/">ionicons.com</a>
 * <a target="_blank" href="https://tinypng.com">tinypng.com</a>
 * <a target="_blank" href="https://metatags.io/">metatags.io</a>
+* <a target="_blank" href="https://heymeta.com/">heymeta.com</a>
 * <a target="_blank" href="https://fonts.google.com/">fonts.google.com</a>
 * <a target="_blank" href="https://vuejs.org">vuejs.org</a>
 
