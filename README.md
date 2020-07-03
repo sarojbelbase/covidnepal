@@ -27,7 +27,7 @@
 
 <strong><a target="_blank" href="https://covidnepal.now.sh">website > covidnepal.now.sh</a></strong><br>
 <strong><a target="_blank" href="https://t.me/covidnepal_bot">telegram bot > t.me/covidnepal_bot</a></strong><br>
-<strong><a target="_blank" href="https://progressiveapp.store/mypwa/covidnepal">pwa store > progressiveapp.store/mypwa/covidnepal </a></strong>
+<strong><a target="_blank" href="https://progressiveapp.store/pwa/covidnepal">pwa store > progressiveapp.store/pwa/covidnepal </a></strong>
 
 ## Prerequisites
 
