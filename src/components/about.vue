@@ -13,30 +13,34 @@
           <p class="text-left covid-text">
             First thing first,
             <span class="font-weight-bold text-warning">this</span> is a progressive web app(PWA) meaning it could be
-            installed inside the browser easily like a mobile application. For the convenience, I also made an effort to make it more reachable
-            by making it available on telegram,
+            installed inside the browser easily like a mobile application. If you don't like typing websites and wish things could be simpler?
+            well, I thought about that too, there's an alternate way of getting these updates i.e through a telegram bot, which happens
+            to be everyone's favorite & nearest app in the phone these days.
             <a
               target="_blank"
               class="text-decoration-none"
               rel="noopener noreferrer"
               href="https://t.me/covidnepal_bot"
-            >t.me/covidnepal_bot</a> if you prefer to get updates through the nearest neighboring app.
+            >t.me/covidnepal_bot</a>
           </p>
 
           <p class="text-left covid-text">
-            Talking about all these data I'm showing, well they are fetched throught
+            Talking about all these data I'm showing, well they don't belong to me and are fetched through
             <span
               class="font-weight-bold text-info"
-            >APIs</span>,
-            which were one step far away from googling. If you search for one like I did, the first result will serve you well.
-            But there's too story about related to it, I started this project on May 21st but due to
-            nonreliable APIs, I had to constantly change my layouts, concepts and my several other tries to make it simple.
+            >API</span>,
+            any weirdness in data or see
+            <span
+              class="font-weight-bold covid-alt"
+            >page taking forever to load</span> well that means the API is not working. But I spent months on it to avoid that.
+            As I used "spent months on it", you should also know how; I started this project on May 21st but due to
+            nonreliable APIs, I had to constantly change my layouts, concepts & my several other tries to make it simple.
             Hence the delay. You could see those constant 'API Changes' commits on my
             <a
               target="_blank"
               class="text-decoration-none"
               href="https://github.com/sidbelbase/covidnepal"
-            >github repo</a>. It is a true story BTW.
+            >github repo</a>. It's a true story TBH. I didn't make that up.
           </p>
 
           <p class="text-left covid-text pt-3">

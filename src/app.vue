@@ -43,15 +43,15 @@ body {
 
 .neu {
   border-radius: 12px !important;
-  background: -o-linear-gradient(225deg, #0a0a0a, #0d0d0e);
-  background: linear-gradient(225deg, #0a0a0a, #0d0d0e);
-  -webkit-box-shadow: -5px 5px 5px #0a0a0b, 5px -5px 5px #0e0e0f;
+  background: -o-linear-gradient(225deg, #0c0c0c, #0d0d0e);
+  background: linear-gradient(225deg, #0c0c0c, #0d0d0e);
+  -webkit-box-shadow: -5px 5px 6px #0a0a0b, 5px -5px 5px #0e0e0f;
   box-shadow: -5px 5px 6px #0a0a0b, 5px -5px 5px #0e0e0f;
 }
 
 .neuify {
-  background: -o-linear-gradient(225deg, #0a0a0a, #0d0d0e);
-  background: linear-gradient(225deg, #0a0a0a, #0d0d0e);
+  background: -o-linear-gradient(225deg, #0c0c0c, #0d0d0e);
+  background: linear-gradient(225deg, #0c0c0c, #0d0d0e);
 }
 
 .dark {

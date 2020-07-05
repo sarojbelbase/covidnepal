@@ -5,22 +5,22 @@
 
 <img src="./public/img/summary.png" width="100%" height="auto"><br>
 <span align="center">
-<img src="./public/img/screenshot_one.jpg" width="48%" height="auto">
-<img src="./public/img/screenshot_two.jpg" width="48%" height="auto">
+<img src="./public/img/screenshot_one.jpg" width="49%" height="auto">
+<img src="./public/img/screenshot_two.jpg" width="49%" height="auto">
 </span>
 ## Introduction
 
-**covidnepal** is just "another try" to look into covidcases inside Nepal.  The main purpose of building this one again is to provide reliable, detailed & more informational data inside a same application. It depends on reliable API (after spending months for it). It uses PWA (Progressive Web App) technology, meaning it could be installed inside the browser easily like a mobile application and later could be run like an application & follows **neumorphic** design style & smoother animations for UI/UX.
+**covidnepal** is just "another try" to look into covidcases inside Nepal.  The main purpose of building this one again is to provide reliable, detailed & more informational data inside a same application. It depends on reliable API (after spending months for it). It is PWA based,(Progressive Web App) meaning it could be installed inside the browser easily like a mobile application and later it could be run offline. For UI/UX it uses dark **neumorphic** design & smoother animations.
 
 
 ### Features
 
 * Lists covid-cases by districts & provinces
 * Tracks live cases worldwide
-* Auto updating covid related news
+* Infinitely loaded covid related news
 * Installable on any web browser & smartphones
-* Alternate way for accessing data through a telegram bot
-* Neumorphic styled layout
+* Official telegram bot for alternate updates
+* Neumorphic styled design
 * Dark mode enabled by default
 
 ### Links
@@ -50,6 +50,7 @@
  #### Websites
 
 * <a target="_blank" href="https://realfavicongenerator.net/">realfavicongenerator.net</a>
+* <a target="_blank" href="https://autoprefixer.github.io/">autoprefixer.github.io</a>
 * <a target="_blank" href="https://ionicons.com/">ionicons.com</a>
 * <a target="_blank" href="https://tinypng.com">tinypng.com</a>
 * <a target="_blank" href="https://metatags.io/">metatags.io</a>
@@ -57,7 +58,7 @@
 * <a target="_blank" href="https://fonts.google.com/">fonts.google.com</a>
 * <a target="_blank" href="https://vuejs.org">vuejs.org</a>
 
-#### API Used
+#### API
 
 * <a target="_blank" href="https://documenter.getpostman.com/view/9992373/SzS7PkXr?version=latest">Postman | nepalcorona.info</a>
 
