@@ -21,21 +21,12 @@ $dark: #616161;
 $darker: #141414;
 $normal: #bfcacf;
 
-.noselect {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 @mixin neu-gradient($color-one, $color-two) {
+  background: -o-linear-gradient(225deg, $color-one, $color-two);
   background: linear-gradient(225deg, $color-one, $color-two);
 }
 
 body {
-  @extend .noselect;
   scroll-behavior: smooth !important;
   font-family: "Source Sans Pro", sans-serif !important;
   background-color: $theme !important;
@@ -43,6 +34,12 @@ body {
   -moz-osx-font-smoothing: grayscale !important;
   text-align: center !important;
   margin-top: 60px !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .dark {
@@ -56,6 +53,7 @@ body {
 .neu {
   border-radius: 12px !important;
   @include neu-gradient(#0c0c0c, #0d0d0e);
+  -webkit-box-shadow: -5px 5px 6px #0a0a0b, 5px -5px 5px #0e0e0f;
   box-shadow: -5px 5px 6px #0a0a0b, 5px -5px 5px #0e0e0f;
 }
 

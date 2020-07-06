@@ -17,7 +17,7 @@
 </span>
 ## Introduction
 
-**covidnepal** is just "another try" to look into covidcases inside Nepal.  The main purpose of building this one again is to provide reliable, detailed & more informational data inside a same application. It depends on reliable API (after spending months for it) and PWA based (Progressive Web App) meaning it could be installed inside the browser like a mobile application and later it could be run be run like an application. By default it uses dark **neumorphic** UI design.
+**covidnepal** is just "another try" to look into covidcases inside Nepal.  The main purpose of building this one again is to provide reliable, detailed & more informational data inside a same application. It depends on reliable API (after spending months for it) and PWA based (Progressive Web App) meaning it could be installed inside the browser or mobile devices like a native mobile app. By default it uses dark **neumorphic** design for UI.
 
 
 ### Features
