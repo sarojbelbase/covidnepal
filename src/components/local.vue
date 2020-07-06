@@ -274,12 +274,6 @@ export default {
 </script>
 
 <style>
-.localbar {
-  height: 8px !important;
-  background: -o-linear-gradient(205deg, #1a1919, #0b0b0c);
-  background: linear-gradient(245deg, #1a1919, #0b0b0c);
-}
-
 .looks {
   border-top: 0 !important;
   border-bottom: 0 !important;

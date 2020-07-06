@@ -15,59 +15,56 @@ export default {
 };
 </script>
 
-<style>
-html {
-  scroll-behavior: smooth !important;
+<style lang="scss">
+$theme: #0c0c0d;
+$dark: #616161;
+$darker: #141414;
+$normal: #bfcacf;
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin neu-gradient($color-one, $color-two) {
+  background: linear-gradient(225deg, $color-one, $color-two);
 }
 
 body {
+  @extend .noselect;
+  scroll-behavior: smooth !important;
   font-family: "Source Sans Pro", sans-serif !important;
-  background-color: #0c0c0d !important;
+  background-color: $theme !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   text-align: center !important;
   margin-top: 60px !important;
 }
 
-.card {
-  border-radius: 8px !important;
+.dark {
+  background-color: $dark;
 }
 
 .darker {
-  background-color: #141414;
-}
-
-.semi-darker {
-  background-color: #1a1a1b !important;
+  background-color: $darker;
 }
 
 .neu {
   border-radius: 12px !important;
-  background: -o-linear-gradient(225deg, #0c0c0c, #0d0d0e);
-  background: linear-gradient(225deg, #0c0c0c, #0d0d0e);
-  -webkit-box-shadow: -5px 5px 6px #0a0a0b, 5px -5px 5px #0e0e0f;
+  @include neu-gradient(#0c0c0c, #0d0d0e);
   box-shadow: -5px 5px 6px #0a0a0b, 5px -5px 5px #0e0e0f;
 }
 
 .neuify {
-  background: -o-linear-gradient(225deg, #0c0c0c, #0d0d0e);
-  background: linear-gradient(225deg, #0c0c0c, #0d0d0e);
+  @include neu-gradient(#0c0c0c, #0d0d0e);
 }
 
-.dark {
-  background-color: #616161;
-}
-
-.covid-confirmed {
-  color: #e8e3e3;
-}
-
-.covid-recovered {
-  color: #f39c2a;
-}
-
-.covid-deceased {
-  color: #dd4a4a;
+.card {
+  border-radius: 8px !important;
 }
 
 .loader {
@@ -77,18 +74,18 @@ body {
 }
 
 .covid-text {
-  color: #bfcacf;
+  color: $normal;
 }
 
 .covid-alt {
-  color: #fd9001;
+  color: #da623d;
 }
 
 ::-webkit-scrollbar {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #0c0c0d;
+  background: $theme;
 }
 ::-webkit-scrollbar-thumb {
   background: #3d3d3d;
@@ -98,64 +95,70 @@ body {
 }
 
 .bar-warning {
-  background: -o-linear-gradient(225deg, #e9b61c, #8b751d);
-  background: linear-gradient(225deg, #d4ac32, #8b751d);
+  @include neu-gradient(#d4ac32, #8b751d);
 }
 
 .bar-info {
-  background: -o-linear-gradient(225deg, #116e7c, #148c9e);
-  background: linear-gradient(225deg, #116e7c, #148c9e);
+  @include neu-gradient(#116e7c, #148c9e);
 }
 
 .bar-success {
-  background: -o-linear-gradient(225deg, #1fbb44, #357c45);
-  background: linear-gradient(225deg, #1fbb44, #357c45);
+  @include neu-gradient(#1fbb44, #357c45);
 }
 
 .bar-danger {
-  background: -o-linear-gradient(225deg, #e0505e, #c6303e);
-  background: linear-gradient(225deg, #e0505e, #c6303e);
+  @include neu-gradient(#e0505e, #c6303e);
 }
 
 .bar-primary {
-  background: -o-linear-gradient(225deg, #0464be, #29496b);
-  background: linear-gradient(225deg, #0464be, #29496b);
-}
-ion-icon {
-  color: #c0c0c0;
-}
-ion-icon.larger {
-  font-size: 36px !important;
-}
-ion-icon.large {
-  font-size: 24px !important;
-}
-ion-icon.small {
-  font-size: 12px !important;
-}
-ion-icon.success {
-  color: #19d42f;
-}
-ion-icon.danger {
-  color: #e91b37;
-}
-ion-icon.warning {
-  color: #ffbf00;
-}
-ion-icon.info {
-  color: #11aac2;
-}
-ion-icon.primary {
-  color: #0c66b9;
+  @include neu-gradient(#0464be, #29496b);
 }
 
-ion-icon.thin {
-  --ionicon-stroke-width: 16px;
+.probar {
+  height: 6px !important;
+  @include neu-gradient(#1a1919, #0b0b0c);
 }
-ion-icon.bold {
-  --ionicon-stroke-width: 36px;
+
+.localbar {
+  height: 8px !important;
+  @include neu-gradient(#1a1919, #0b0b0c);
 }
-ion-icon.bolder {
-  --ionicon-stroke-width: 68px;
+
+ion-icon {
+  color: #c0c0c0;
+
+  &.larger {
+    font-size: 36px !important;
+  }
+  &.large {
+    font-size: 24px !important;
+  }
+  &.small {
+    font-size: 12px !important;
+  }
+  &.success {
+    color: #19d42f;
+  }
+  &.danger {
+    color: #e91b37;
+  }
+  &.warning {
+    color: #ffbf00;
+  }
+  &.info {
+    color: #11aac2;
+  }
+  &.primary {
+    color: #0c66b9;
+  }
+  &.thin {
+    --ionicon-stroke-width: 16px;
+  }
+  &.bold {
+    --ionicon-stroke-width: 36px;
+  }
+  &.bolder {
+    --ionicon-stroke-width: 68px;
+  }
 }
 </style>

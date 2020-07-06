@@ -101,9 +101,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.goback {
-  cursor: pointer;
-}
-</style>

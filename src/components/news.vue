@@ -125,29 +125,39 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@600&display=swap");
 
-.news .news-title {
-  font-family: "Mukta", sans-serif;
+@mixin for-md-and-sm {
+  @media (max-width: 768px) {
+    @content;
+  }
 }
 
-.news .news-image {
-  height: 11rem;
-}
-
-.news .news-card {
-  max-width: 24rem;
-  min-height: 19rem;
-}
-
-@media (max-width: 768px) {
-  .news .news-image {
-    height: unset;
+.news {
+  .news-title {
+    font-family: "Mukta", sans-serif;
   }
 
-  .news .news-card {
-    max-width: unset;
+  .news-image {
+    height: 11rem;
+  }
+
+  .news-card {
+    max-width: 24rem;
+    min-height: 19rem;
+  }
+}
+
+@include for-md-and-sm {
+  .news {
+    .news-image {
+      height: unset;
+    }
+
+    .news-card {
+      max-width: unset;
+    }
   }
 }
 </style>

@@ -7,15 +7,17 @@
           <p class="text-left covid-text">
             Well,
             <span class="font-weight-bold text-warning">covidnepal</span> is just another try to track covidcases
-            (I just don't like using 'corona') inside Nepal. I'm a bit late to this game but that has always been my feature, I guess.
+            inside Nepal. I'm a bit late to this but that has always been my feature, I guess. Also, this site is kinda tribute to other
+            tracking sites which is either on loading state or been displaying really old stats & data. Let's pray that this site won't suffer
+            from the same problem in the future.
           </p>
 
           <p class="text-left covid-text">
             First thing first,
             <span class="font-weight-bold text-warning">this</span> is a progressive web app(PWA) meaning it could be
-            installed inside the browser easily like a mobile application. If you don't like typing websites and wish things could be simpler?
+            installed inside the browser easily like a mobile application. If you don't like typing websites and wish things could be simpler...
             well, I thought about that too, there's an alternate way of getting these updates i.e through a telegram bot, which happens
-            to be everyone's favorite & nearest app in the phone these days.
+            to be everyone's favorite & nearest app in the phone these days &bull;
             <a
               target="_blank"
               class="text-decoration-none"

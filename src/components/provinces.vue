@@ -86,7 +86,7 @@ export default {
       loading: true
     };
   },
-    metaInfo() {
+  metaInfo() {
     return {
       title: "covidnepal | provinces",
       meta: [
@@ -119,11 +119,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.probar {
-  height: 6px !important;
-  background: -o-linear-gradient(205deg, #1a1919, #0b0b0c);
-  background: linear-gradient(245deg, #1a1919, #0b0b0c);
-}
-</style>

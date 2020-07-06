@@ -1,6 +1,13 @@
 <p align="center">
 <img src="./src/assets/images/black.svg" width="35%" height="auto"><br>
 <strong>Yet another look into covid-19 cases inside nepal</strong><br>
+<span>
+<a href="https://hits.dwyl.com/sidbelbase/covidnepal"><img src="https://hits.dwyl.com/sidbelbase/covidnepal.svg" alt="Total Hits"></a>
+<img alt="Top Language" src="https://img.shields.io/github/languages/top/sidbelbase/covidnepal?&style=flat-square">
+ <a href="https://github.com/sidbelbase/covidnepal/releases"><img src="https://img.shields.io/github/v/release/sidbelbase/covidnepal?style=flat-square" alt="Releases"></a>
+ <a target="_blank" href="https://t.me/covidnepal_bot">
+ <img src="https://img.shields.io/static/v1?label=add&message=on%20telegram&color=blue&style=flat-square"></a>
+</span>
 </p>
 
 <img src="./public/img/summary.png" width="100%" height="auto"><br>
@@ -10,18 +17,18 @@
 </span>
 ## Introduction
 
-**covidnepal** is just "another try" to look into covidcases inside Nepal.  The main purpose of building this one again is to provide reliable, detailed & more informational data inside a same application. It depends on reliable API (after spending months for it). It is PWA based,(Progressive Web App) meaning it could be installed inside the browser easily like a mobile application and later it could be run offline. For UI/UX it uses dark **neumorphic** design & smoother animations.
+**covidnepal** is just "another try" to look into covidcases inside Nepal.  The main purpose of building this one again is to provide reliable, detailed & more informational data inside a same application. It depends on reliable API (after spending months for it) and PWA based (Progressive Web App) meaning it could be installed inside the browser like a mobile application and later it could be run be run like an application. By default it uses dark **neumorphic** UI design.
 
 
 ### Features
 
 * Lists covid-cases by districts & provinces
 * Tracks live cases worldwide
-* Infinitely loaded covid related news
-* Installable on any web browser & smartphones
-* Official telegram bot for alternate updates
+* Infinitely loaded covid-19 related news
+* Installable on any web browser or smartphone
+* Official telegram bot support for alternate updates
 * Neumorphic styled design
-* Dark mode enabled by default
+* Dark mode by default
 
 ### Links
 
@@ -33,7 +40,7 @@
 
 * Node.js
 * Yarn Package Manager
-* Reliable API
+* Covid-19 API
 * PWA Builder
 
 ## Used
@@ -51,6 +58,7 @@
 
 * <a target="_blank" href="https://realfavicongenerator.net/">realfavicongenerator.net</a>
 * <a target="_blank" href="https://autoprefixer.github.io/">autoprefixer.github.io</a>
+* <a target="_blank" href="https://shields.io/">shields.io</a>
 * <a target="_blank" href="https://ionicons.com/">ionicons.com</a>
 * <a target="_blank" href="https://tinypng.com">tinypng.com</a>
 * <a target="_blank" href="https://metatags.io/">metatags.io</a>

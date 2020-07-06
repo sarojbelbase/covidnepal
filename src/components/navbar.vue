@@ -103,6 +103,7 @@ export default {
 .logo {
   height: 32px;
 }
+
 .no-outline {
   outline: none !important;
   border: 0 !important;
