@@ -3,7 +3,9 @@
 <strong>Yet another look into covid-19 cases inside nepal</strong><br>
 <span>
 <a href="https://hits.dwyl.com/sidbelbase/covidnepal"><img src="https://hits.dwyl.com/sidbelbase/covidnepal.svg" alt="Total Hits"></a>
+<a href="https://github.com/sidbelbase/covidnepal/search?l=vue">
 <img alt="Top Language" src="https://img.shields.io/github/languages/top/sidbelbase/covidnepal?&style=flat-square">
+</a>
  <a href="https://github.com/sidbelbase/covidnepal/releases"><img src="https://img.shields.io/github/v/release/sidbelbase/covidnepal?style=flat-square" alt="Releases"></a>
  <a target="_blank" href="https://t.me/covidnepal_bot">
  <img src="https://img.shields.io/static/v1?label=add&message=on%20telegram&color=blue&style=flat-square"></a>
