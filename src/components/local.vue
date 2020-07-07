@@ -230,7 +230,6 @@ export default {
   name: "local",
   data() {
     return {
-      global: [],
       local: [],
       loading: true
     };
@@ -245,11 +244,6 @@ export default {
         }
       ]
     };
-  },
-  methods: {
-    percentTest: function(sample, total) {
-      return "width: " + Math.round((sample / total) * 100) + "%;";
-    }
   },
   beforeCreate() {
     this.loading = true;

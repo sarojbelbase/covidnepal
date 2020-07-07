@@ -24,13 +24,11 @@ Vue.filter("padding", givenstat => {
   }
 });
 
-Vue.filter("humanize", givendate => {
-  return moment(givendate).fromNow()
-});
+Vue.filter("humanize", givendate => moment(givendate).fromNow());
 
 Vue.filter("ordinalize", givennumber => {
   const suffix = ["th", "st", "nd", "rd"]
-  let thenumber = givennumber % 100;
+  const thenumber = givennumber % 100;
   return givennumber + (suffix[(thenumber - 20) % 10] || suffix[thenumber] || suffix[0]);
 });
 
@@ -39,6 +37,14 @@ Vue.filter("dayify", givendate => {
   const date = moment(givendate)
   return (moment().diff(date, 'days') >= 2) ? date.fromNow() : date.calendar().split(' ')[0]
 });
+
+Vue.mixin({
+  methods: {
+    percentTest: function (sample, total) {
+      return "width: " + Math.round((sample / total) * 100) + "%;";
+    }
+  }
+})
 
 Vue.mixin({
   data: () => {

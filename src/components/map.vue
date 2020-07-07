@@ -60,7 +60,6 @@ export default {
   },
   data() {
     return {
-      loading: true,
       covidcases: [],
       geodata: [],
       colorScale: [
@@ -95,7 +94,6 @@ export default {
   },
   mounted() {
     this.geodata = nepalGeojson;
-    this.loading = false;
   },
   methods: {
     beautify: function(any_number) {
@@ -116,8 +114,8 @@ export default {
             cases: this.beautify(district.cases),
             recovered: this.beautify(district.recovered),
             deaths: this.beautify(district.deaths),
-            id: district.id,
-            name: district.name
+            name: district.name,
+            id: district.id
           });
         });
       });

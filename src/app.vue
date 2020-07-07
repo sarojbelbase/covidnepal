@@ -27,11 +27,11 @@ $normal: #bfcacf;
 }
 
 body {
-  scroll-behavior: smooth !important;
   font-family: "Source Sans Pro", sans-serif !important;
-  background-color: $theme !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
+  background-color: $theme !important;
+  scroll-behavior: smooth !important;
   text-align: center !important;
   margin-top: 60px !important;
   -webkit-touch-callout: none;

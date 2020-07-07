@@ -9,6 +9,8 @@
  <a href="https://github.com/sidbelbase/covidnepal/releases"><img src="https://img.shields.io/github/v/release/sidbelbase/covidnepal?style=flat-square" alt="Releases"></a>
  <a target="_blank" href="https://t.me/covidnepal_bot">
  <img src="https://img.shields.io/static/v1?label=add&message=on%20telegram&color=blue&style=flat-square"></a>
+ <a target="_blank" href="https://progressiveapp.store/pwa/covidnepal">
+ <img src="./public/img/pwa.svg" width="48px" height="auto"></a>
 </span>
 </p>
 

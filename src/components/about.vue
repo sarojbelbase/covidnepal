@@ -5,10 +5,9 @@
         <div class="col-lg-8 mx-auto covid-text m-5">
           <h2 class="text-left mb-4">ThisIsAboutPage.</h2>
           <p class="text-left covid-text">
-            Well,
             <span class="font-weight-bold text-warning">covidnepal</span> is just another try to track covidcases
             inside Nepal. I'm a bit late to this but that has always been my feature, I guess. Also, this site is kinda tribute to other
-            tracking sites which is either on loading state or been displaying really old stats & data. Let's pray that this site won't suffer
+            tracking sites which is either on loading state or been displaying really old stats. Let's pray that this site won't suffer
             from the same problem in the future.
           </p>
 
@@ -31,12 +30,12 @@
             <span
               class="font-weight-bold text-info"
             >API</span>,
-            any weirdness in data or see
+            any weirdness in data or if you see
             <span
               class="font-weight-bold covid-alt"
             >page taking forever to load</span> well that means the API is not working. But I spent months on it to avoid that.
             As I used "spent months on it", you should also know how; I started this project on May 21st but due to
-            nonreliable APIs, I had to constantly change my layouts, concepts & my several other tries to make it simple.
+            unreliable APIs, I had to constantly change my layouts, concepts & my several tries to keep it simple.
             Hence the delay. You could see those constant 'API Changes' commits on my
             <a
               target="_blank"
@@ -64,7 +63,7 @@ export default {
       meta: [
         {
           name: "description",
-          content: "Explaining stuffs how & why I made this site."
+          content: "Explaining the purpose of making this web-app."
         }
       ]
     };
