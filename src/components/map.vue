@@ -106,7 +106,7 @@ export default {
   },
   created() {
     axios
-      .get("https://whatsthemiti.herokuapp.com/api/covid/districts/all")
+      .get("https://aworkingapi.herokuapp.com/api/v1/covid/districts/all")
       .then(response => {
         Object.values(response.data).forEach(district => {
           this.covidcases.push({

@@ -249,7 +249,7 @@ export default {
   created() {
     axios
       .get(
-        "https://whatsthemiti.herokuapp.com/api/covid/province/" +
+        "https://aworkingapi.herokuapp.com/api/v1/covid/province/" +
           this.province_id
       )
       .then(response => {

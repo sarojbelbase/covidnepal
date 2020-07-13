@@ -8,7 +8,7 @@ import SequentialEntrance from 'vue-sequential-entrance'
 import './assets/css/animation.css'
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
-import './reg-service-worker'
+import './register-sw'
 
 Vue.use(VueMeta)
 Vue.use(SequentialEntrance);
@@ -16,11 +16,24 @@ Vue.use(InfiniteLoading, {});
 Vue.config.productionTip = false;
 Vue.config.ignoredElements = ['ion-icon'];
 
+Vue.mixin({
+  data: () => {
+    return {
+      lockdownday: moment().diff('2020-03-24', 'days')
+    }
+  },
+  methods: {
+    percentTest: function (sample, total) {
+      return "width: " + Math.round((sample / total) * 100) + "%;";
+    }
+  }
+})
+
 Vue.filter("padding", givenstat => {
-  if (+givenstat >= 0 && givenstat < 10) {
-    return "0" + givenstat;
-  } else if (+givenstat > 9) {
+  if (+givenstat > 9) {
     return givenstat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  } else if (+givenstat < 10) {
+    return "0" + givenstat;
   }
 });
 
@@ -38,21 +51,6 @@ Vue.filter("dayify", givendate => {
   return (moment().diff(date, 'days') >= 2) ? date.fromNow() : date.calendar().split(' ')[0]
 });
 
-Vue.mixin({
-  methods: {
-    percentTest: function (sample, total) {
-      return "width: " + Math.round((sample / total) * 100) + "%;";
-    }
-  }
-})
-
-Vue.mixin({
-  data: () => {
-    return {
-      lockdownday: moment().diff('2020-03-24', 'days')
-    }
-  }
-})
 
 new Vue({
   router,

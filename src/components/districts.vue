@@ -83,7 +83,8 @@ export default {
   created() {
     axios
       .get(
-        "https://whatsthemiti.herokuapp.com/api/covid/districts/" + this.pro_id
+        "https://aworkingapi.herokuapp.com/api/v1/covid/districts/" +
+          this.pro_id
       )
       .then(response => {
         this.districts = response.data;

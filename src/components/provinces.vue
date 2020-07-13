@@ -102,7 +102,7 @@ export default {
   },
   created() {
     axios
-      .get("https://whatsthemiti.herokuapp.com/api/covid/provinces")
+      .get("https://aworkingapi.herokuapp.com/api/v1/covid/provinces")
       .then(response => {
         this.state_cases = response.data;
         this.loading = false;

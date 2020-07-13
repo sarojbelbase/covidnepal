@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'production') {
       console.log('No internet connection found. covidnepal is running in offline mode.');
     },
     error(error) {
-      console.error('Error during service worker registration:', error);
+      console.error('Error during covidnepal registration:', error);
     },
   });
 }
