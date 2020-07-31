@@ -74,7 +74,7 @@ export default {
   data() {
     return {
       districts: [],
-      loading: true
+      loading: true,
     };
   },
   beforeCreate() {
@@ -82,18 +82,15 @@ export default {
   },
   created() {
     axios
-      .get(
-        "https://aworkingapi.herokuapp.com/api/v1/covid/districts/" +
-          this.pro_id
-      )
-      .then(response => {
+      .get("https://aworkingapi.now.sh/api/v1/covid/districts/" + this.pro_id)
+      .then((response) => {
         this.districts = response.data;
         this.loading = false;
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
         this.loading = true;
       });
-  }
+  },
 };
 </script>

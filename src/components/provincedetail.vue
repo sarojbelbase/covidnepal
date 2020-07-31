@@ -221,7 +221,7 @@ import axios from "axios";
 export default {
   name: "provincedetail",
   components: {
-    districts
+    districts,
   },
   metaInfo() {
     return {
@@ -230,16 +230,16 @@ export default {
         {
           name: "description",
           content:
-            "give a detail look on covidcases inside province " + province_id
-        }
-      ]
+            "give a detail look on covidcases inside province " + province_id,
+        },
+      ],
     };
   },
   props: ["province_id"],
   data() {
     return {
       province: [],
-      loading: true
+      loading: true,
     };
   },
   beforeCreate() {
@@ -249,18 +249,17 @@ export default {
   created() {
     axios
       .get(
-        "https://aworkingapi.herokuapp.com/api/v1/covid/province/" +
-          this.province_id
+        "https://aworkingapi.now.sh/api/v1/covid/province/" + this.province_id
       )
-      .then(response => {
+      .then((response) => {
         this.province = response.data;
         this.loading = false;
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
         this.loading = true;
       });
-  }
+  },
 };
 </script>
 

@@ -83,7 +83,7 @@ export default {
   data() {
     return {
       state_cases: [],
-      loading: true
+      loading: true,
     };
   },
   metaInfo() {
@@ -92,9 +92,9 @@ export default {
       meta: [
         {
           name: "description",
-          content: "give surface look on covidcases inside provinces."
-        }
-      ]
+          content: "give surface look on covidcases inside provinces.",
+        },
+      ],
     };
   },
   beforeCreate() {
@@ -102,15 +102,15 @@ export default {
   },
   created() {
     axios
-      .get("https://aworkingapi.herokuapp.com/api/v1/covid/provinces")
-      .then(response => {
+      .get("https://aworkingapi.now.sh/api/v1/covid/provinces")
+      .then((response) => {
         this.state_cases = response.data;
         this.loading = false;
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
         this.loading = true;
       });
-  }
+  },
 };
 </script>

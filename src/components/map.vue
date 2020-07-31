@@ -48,15 +48,15 @@ export default {
       meta: [
         {
           name: "description",
-          content: "Map viewing covidcases inside nepal."
-        }
-      ]
+          content: "Map viewing covidcases inside nepal.",
+        },
+      ],
     };
   },
   components: {
     LMap,
     "info-control": InfoControl,
-    "choropleth-layer": ChoroplethLayer
+    "choropleth-layer": ChoroplethLayer,
   },
   data() {
     return {
@@ -71,55 +71,55 @@ export default {
         "#bdbdbd",
         "#d9d9d9",
         "#f0f0f0",
-        "#f1f1f1"
+        "#f1f1f1",
       ],
       value: {
         key: "cases",
-        metric: "Positive Cases"
+        metric: "Positive Cases",
       },
       extraValues: [
         {
           key: "recovered",
-          metric: "Recovered Cases"
+          metric: "Recovered Cases",
         },
         {
           key: "deaths",
-          metric: "Death Cases"
-        }
+          metric: "Death Cases",
+        },
       ],
       mapOptions: {
-        attributionControl: false
-      }
+        attributionControl: false,
+      },
     };
   },
   mounted() {
     this.geodata = nepalGeojson;
   },
   methods: {
-    beautify: function(any_number) {
+    beautify: function (any_number) {
       if (typeof any_number === "undefined") {
         return "0";
       } else {
         return any_number;
       }
-    }
+    },
   },
   created() {
     axios
-      .get("https://aworkingapi.herokuapp.com/api/v1/covid/districts/all")
-      .then(response => {
-        Object.values(response.data).forEach(district => {
+      .get("https://aworkingapi.now.sh/api/v1/covid/districts/all")
+      .then((response) => {
+        Object.values(response.data).forEach((district) => {
           this.covidcases.push({
             active: this.beautify(district.active),
             cases: this.beautify(district.cases),
             recovered: this.beautify(district.recovered),
             deaths: this.beautify(district.deaths),
             name: district.name,
-            id: district.id
+            id: district.id,
           });
         });
       });
-  }
+  },
 };
 </script>
 
