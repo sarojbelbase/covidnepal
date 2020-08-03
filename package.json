@@ -2,7 +2,7 @@
 	"name": "covidnepal",
 	"description": "yet another look at covid-19 cases in nepal",
 	"author": "sidbelbase",
-	"version": "1.2.8",
+	"version": "1.2.9",
 	"private": true,
 	"scripts": {
 		"start": "vue-cli-service serve",
@@ -17,6 +17,7 @@
 		"popper.js": "^1.16.1",
 		"register-service-worker": "^1.7.1",
 		"sass-loader": "^9.0.1",
+		"simple-analytics-vue": "^1.1.1",
 		"vue": "^2.6.11",
 		"vue-choropleth": "^0.3.1",
 		"vue-infinite-loading": "^2.4.5",
