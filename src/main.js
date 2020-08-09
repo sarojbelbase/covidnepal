@@ -4,7 +4,6 @@ import router from "./router";
 import moment from "moment";
 import VueMeta from 'vue-meta'
 import InfiniteLoading from 'vue-infinite-loading';
-import SimpleAnalytics from "simple-analytics-vue";
 import SequentialEntrance from 'vue-sequential-entrance'
 import './assets/css/animation.css'
 import "bootstrap/dist/css/bootstrap.css";
@@ -14,7 +13,6 @@ import './register-sw'
 Vue.use(VueMeta)
 Vue.use(SequentialEntrance);
 Vue.use(InfiniteLoading, {});
-Vue.use(SimpleAnalytics, { domain: "covidnepal.now.sh", skip: process.env.NODE_ENV !== "production" });
 Vue.config.productionTip = false;
 Vue.config.ignoredElements = ['ion-icon'];
 
