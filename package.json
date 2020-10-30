@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"axios": "^0.19.2",
-		"bootstrap": "5.0.0-alpha1",
+		"bootstrap": "5.0.0-alpha2",
 		"core-js": "^3.6.5",
 		"moment": "^2.26.0",
 		"node-sass": "^4.14.1",
