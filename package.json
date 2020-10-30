@@ -9,27 +9,27 @@
 		"build": "vue-cli-service build"
 	},
 	"dependencies": {
-		"axios": "^0.19.2",
+		"axios": "0.21.0",
 		"bootstrap": "5.0.0-alpha2",
-		"core-js": "^3.6.5",
-		"moment": "^2.26.0",
-		"node-sass": "^4.14.1",
-		"popper.js": "^1.16.1",
-		"register-service-worker": "^1.7.1",
-		"sass-loader": "^9.0.1",
-		"vue": "^2.6.11",
-		"vue-choropleth": "^0.3.1",
-		"vue-infinite-loading": "^2.4.5",
-		"vue-meta": "^2.4.0",
-		"vue-router": "^3.2.0",
-		"vue-sequential-entrance": "^1.1.3"
+		"core-js": "3.6.5",
+		"moment": "2.27.0",
+		"node-sass": "4.14.1",
+		"popper.js": "1.16.1",
+		"register-service-worker": "1.7.1",
+		"sass-loader": "9.0.1",
+		"vue": "2.6.12",
+		"vue-choropleth": "0.3.1",
+		"vue-infinite-loading": "2.4.5",
+		"vue-meta": "2.4.0",
+		"vue-router": "3.4.8",
+		"vue-sequential-entrance": "1.1.3"
 	},
 	"devDependencies": {
-		"@vue/cli-plugin-babel": "~4.4.0",
-		"@vue/cli-plugin-pwa": "~4.4.0",
-		"@vue/cli-plugin-router": "~4.4.0",
-		"@vue/cli-service": "~4.4.0",
-		"vue-template-compiler": "^2.6.11"
+		"@vue/cli-plugin-babel": "4.5.8",
+		"@vue/cli-plugin-pwa": "4.5.8",
+		"@vue/cli-plugin-router": "4.5.8",
+		"@vue/cli-service": "4.5.8",
+		"vue-template-compiler": "2.6.12"
 	},
 	"browserslist": [
 		"> 1%",
