@@ -15,7 +15,7 @@
 		"moment": "2.29.1",
 		"node-sass": "4.14.1",
 		"popper.js": "1.16.1",
-		"register-service-worker": "1.7.1",
+		"register-service-worker": "1.7.2",
 		"sass-loader": "9.0.3",
 		"vue": "2.6.12",
 		"vue-choropleth": "0.3.1",
