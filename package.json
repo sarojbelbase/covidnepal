@@ -11,7 +11,7 @@
 	"dependencies": {
 		"axios": "0.21.1",
 		"bootstrap": "5.0.0-alpha3",
-		"core-js": "3.8.2",
+		"core-js": "3.8.3",
 		"moment": "2.29.1",
 		"node-sass": "4.14.1",
 		"popper.js": "1.16.1",
