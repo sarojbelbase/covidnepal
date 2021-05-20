@@ -20,26 +20,46 @@
           <span>Updated {{ news[0].updated_at | humanize }}</span>
         </span>
       </div>
-      <div class="col-md-4 col-sm-6 col-xl-3 p-3" v-for="(thenews, index) in news" :key="index">
+      <div
+        class="col-md-4 col-sm-6 col-xl-3 p-3"
+        v-for="(thenews, index) in news"
+        :key="index"
+      >
         <sequential-entrance fromLeft>
           <div class="card neu news-card">
-            <img :src="thenews.image_url" class="card-img-top news-image" :alt="thenews.title" />
+            <img
+              :src="thenews.image_url"
+              class="card-img-top news-image"
+              :alt="thenews.title"
+            />
             <div class="card-body">
-              <h6 class="card-title covid-text news-title text-left">{{thenews.title}}</h6>
+              <h6 class="card-title covid-text news-title text-left">
+                {{ thenews.title }}
+              </h6>
               <h6
                 class="text-info float-left small font-weight-bold mt-3 text-uppercase"
-              >{{thenews.created_at | humanize }}</h6>
+              >
+                {{ thenews.created_at | humanize }}
+              </h6>
               <a :href="thenews.url" target="_blank" rel="noopener noreferrer">
-                <h6 class="text-muted float-right small font-weight-bold mt-3">READ MORE</h6>
+                <h6 class="text-muted float-right small font-weight-bold mt-3">
+                  READ MORE
+                </h6>
               </a>
             </div>
           </div>
         </sequential-entrance>
       </div>
       <infinite-loading spinner="waveDots" @infinite="infiniteHandler">
-        <div class="text-info h4 text-center my-3" slot="no-more">You have travelled way too far.</div>
-        <div class="text-warning h4 text-center my-3" slot="no-results">No updates.</div>
-        <div class="text-danger h4 text-center my-3" slot="error">Couldn't get what you wanted :(</div>
+        <div class="text-info h4 text-center my-3" slot="no-more">
+          You have travelled way too far.
+        </div>
+        <div class="text-warning h4 text-center my-3" slot="no-results">
+          No updates.
+        </div>
+        <div class="text-danger h4 text-center my-3" slot="error">
+          Couldn't get what you wanted :(
+        </div>
       </infinite-loading>
     </div>
   </div>
@@ -57,7 +77,7 @@ export default {
       start: 0,
       page: 1,
       loading: true,
-      url: "https://nepalcorona.info/api/v1/news"
+      url: "https://corona.askbhunte.com/api/v1/news",
     };
   },
   metaInfo() {
@@ -66,9 +86,9 @@ export default {
       meta: [
         {
           name: "description",
-          content: "Follow news about covidcases from reputed news industries."
-        }
-      ]
+          content: "Follow news about covidcases from reputed news industries.",
+        },
+      ],
     };
   },
   created() {
@@ -77,10 +97,10 @@ export default {
         params: {
           page: this.page,
           start: this.start,
-          limit: this.limit
-        }
+          limit: this.limit,
+        },
       })
-      .then(response => {
+      .then((response) => {
         if (response.data.data.length > 0) {
           this.news = response.data.data;
           this.loading = false;
@@ -88,13 +108,13 @@ export default {
           console.log("Didn't found any updates.");
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
         this.loading = true;
       });
   },
   methods: {
-    infiniteHandler: function($state) {
+    infiniteHandler: function ($state) {
       this.page += 1;
       this.start += 24;
 
@@ -103,25 +123,25 @@ export default {
           params: {
             page: this.page,
             start: this.start,
-            limit: this.limit
-          }
+            limit: this.limit,
+          },
         })
-        .then(response => {
+        .then((response) => {
           if (response.data.data.length > 0) {
-            response.data.data.forEach(article => this.news.push(article));
+            response.data.data.forEach((article) => this.news.push(article));
             this.loading = false;
             $state.loaded();
           }
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error);
           $state.error();
         });
-    }
+    },
   },
   beforeCreate() {
     this.loading = true;
-  }
+  },
 };
 </script>
 
